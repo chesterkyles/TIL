@@ -6,8 +6,8 @@ The following are the summary of the things that I learned in a daily basis whet
 ---------------------------------------------------------------------
 
 ### Categories
- - [Docker](github.com/chestercolita/til/#docker)
- - [Firebase](github.com/chestercolita/til/#firebase)
+ - [Docker](#docker)
+ - [Firebase](#firebase)
 
 ----------------------------------------------------------------------
 
