@@ -15,4 +15,5 @@ The following are the summary of the things that I learned in a daily basis whet
 
 ### Firebase
  - [Firebase For Laravel](firebase/firebase-for-laravel.md)
- - [Create a firebase user dynamically](firebase/create-user.md)
+ - [Create a firebase user programmatically](firebase/create-user.md)
+ - [Send a push notification to a specific device](firebase/cloud-messaging.md)
