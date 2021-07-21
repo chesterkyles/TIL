@@ -8,6 +8,7 @@ The following are the summary of the things that I learned in a daily basis whet
 ### Categories
  - [Docker](#docker)
  - [Firebase](#firebase)
+ - [Laravel](#laravel)
 
 ----------------------------------------------------------------------
 
