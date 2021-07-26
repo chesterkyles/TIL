@@ -27,7 +27,7 @@ The following are the summary of the things that I learned in a daily basis whet
  - [Handling Errors and Exceptions](laravel/error-handling.md)
  - [Authenticate Users](laravel/authentication.md)
  - [Authorizing Actions](laravel/authorization.md)
- - [Inspect and Filter HTTP requests using Middleware](laravel/middleware.md)
+ - [Inspect and filter HTTP requests using Middleware](laravel/middleware.md)
  - [HTTP Responses](laravel/http-response.md)
  - [HTTP Requests](laravel/http-request.md)
  - [File Storage using Laravel's filesystem](laravel/file-storage.md)
