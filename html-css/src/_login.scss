@@ -1,5 +1,6 @@
 .login-clean{
-  background:#f1f7fc;padding:80px 0;
+  background:#f1f7fc;
+  padding:80px 0;
 }
 
 .login-clean form{
@@ -57,11 +58,13 @@
   text-align:center;
   font-size:12px;
   color:#6f7a85;
-  opacity:.9;text-decoration:none;
+  opacity:.9;
+  text-decoration:none;
 }
 
 .login-clean form .forgot:active,.login-clean form .forgot:hover{
-  opacity:1;text-decoration:none;
+  opacity:1;
+  text-decoration:none;
 }
 
 .card,.form-group{
