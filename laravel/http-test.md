@@ -214,7 +214,7 @@ You may use the `component` method to evaluate and render a Blade component. Lik
     $view->assertSee('Taylor');
 ```
 
-### Avaliable Assertions
+## Avaliable Assertions
 Read official Laravel documentation for the [complete list](https://laravel.com/docs/8.x/http-tests#available-assertions) of available assertions. Some of the available assertions are the following:
  - assertJson
 ```php

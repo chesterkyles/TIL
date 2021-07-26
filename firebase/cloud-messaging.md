@@ -98,14 +98,11 @@ $deviceToken = '...';
 $anotherDeviceToken = '...';
 
 $message = CloudMessage::withTarget('token', $deviceToken)
-    ->withNotification(['title' => 'My title', 'body' => 'My Body'])
-;
+    ->withNotification(['title' => 'My title', 'body' => 'My Body']);
 
 $messaging->send($message);
 
 $sameMessageToDifferentTarget = $message->withChangedTarget('token', $anotherDeviceToken);
 ```
 
-
 You can read full documentation of Firebase Admin SDK [here](https://firebase-php.readthedocs.io/en/latest/cloud-messaging.html#cloud-messaging).
-

@@ -24,6 +24,14 @@ The following are the summary of the things that I learned in a daily basis whet
 
 ### Laravel
  - [Create HTTP tests](laravel/http-test.md)
+ - [Handling Errors and Exceptions](laravel/error-handling.md)
+ - [Authenticate Users](laravel/authentication.md)
+ - [Authorizing Actions](laravel/authorization.md)
+ - [Inspect and Filter HTTP requests using Middleware](laravel/middleware.md)
+ - [HTTP Responses](laravel/http-response.md)
+ - [HTTP Requests](laravel/http-request.md)
+ - [File Storage using Laravel's filesystem](laravel/file-storage.md)
+ - [Add breadcrumbs using Tabuna/Breadcrumbs package](laravel/tabuna-breadcrumbs.md)
 
 ### Github Workflow
  - [About Github actions](github_workflow/github-actions.md)
