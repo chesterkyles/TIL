@@ -35,3 +35,8 @@ The following are the summary of the things that I learned in a daily basis whet
 
 ### Github Workflow
  - [About Github actions](github_workflow/github-actions.md)
+
+### Amazon Web Services (AWS)
+ - [AWS Cloud Development Kit](aws/cdk.md)
+ - [Create a CI/CD pipeline for Amazon ECS with Github Actions](aws/ecs.md)
+ - [Serverless Architecture](aws/serverless.md)
