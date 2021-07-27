@@ -10,6 +10,7 @@ The following are the summary of the things that I learned in a daily basis whet
  - [Firebase](#firebase)
  - [Laravel](#laravel)
  - [Github Workflow](#github-workflow)
+ - [Amazon Web Services (AWS)](#amazon-web-services-aws)
 
 ----------------------------------------------------------------------
 
