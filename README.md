@@ -14,7 +14,7 @@ The following are the summary of the things that I learned in a daily basis whet
 ----------------------------------------------------------------------
 
 ### Docker
- - [Networking in Compose](docker/networking-in-compose.md)
+ - [Networking in Compose](docker/networking-in-compose.md) :x:
 
 ### Firebase
  - [Firebase For Laravel](firebase/firebase-for-laravel.md)
@@ -25,18 +25,18 @@ The following are the summary of the things that I learned in a daily basis whet
 ### Laravel
  - [Create HTTP tests](laravel/http-test.md)
  - [Handling Errors and Exceptions](laravel/error-handling.md)
- - [Authenticate Users](laravel/authentication.md)
- - [Authorizing Actions](laravel/authorization.md)
- - [Inspect and filter HTTP requests using Middleware](laravel/middleware.md)
- - [HTTP Responses](laravel/http-response.md)
- - [HTTP Requests](laravel/http-request.md)
- - [File Storage using Laravel's filesystem](laravel/file-storage.md)
- - [Add breadcrumbs using Tabuna/Breadcrumbs package](laravel/tabuna-breadcrumbs.md)
+ - [Authenticate Users](laravel/authentication.md) :x:
+ - [Authorizing Actions](laravel/authorization.md) :x:
+ - [Inspect and filter HTTP requests using Middleware](laravel/middleware.md) :x:
+ - [HTTP Responses](laravel/http-response.md) :x:
+ - [HTTP Requests](laravel/http-request.md) :x:
+ - [File Storage using Laravel's filesystem](laravel/file-storage.md) :x:
+ - [Add breadcrumbs using Tabuna/Breadcrumbs package](laravel/tabuna-breadcrumbs.md) :x:
 
 ### Github Workflow
- - [About Github actions](github_workflow/github-actions.md)
+ - [About Github actions](github_workflow/github-actions.md) :x:
 
 ### Amazon Web Services (AWS)
- - [AWS Cloud Development Kit](aws/cdk.md)
- - [Create a CI/CD pipeline for Amazon ECS with Github Actions](aws/ecs.md)
- - [Serverless Architecture](aws/serverless.md)
+ - [AWS Cloud Development Kit](aws/cdk.md) :x:
+ - [Create a CI/CD pipeline for Amazon ECS with Github Actions](aws/ecs.md) :x:
+ - [Serverless Architecture](aws/serverless.md) :x:
