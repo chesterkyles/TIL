@@ -27,7 +27,7 @@ The following are the summary of the things that I learned in a daily basis whet
  - [Create HTTP tests](laravel/http-test.md)
  - [Handling Errors and Exceptions](laravel/error-handling.md)
  - [Authenticate Users](laravel/authentication.md)
- - [Authorizing Actions](laravel/authorization.md) :x:
+ - [Authorizing Actions](laravel/authorization.md)
  - [Inspect and filter HTTP requests using Middleware](laravel/middleware.md) :x:
  - [HTTP Responses](laravel/http-response.md) :x:
  - [HTTP Requests](laravel/http-request.md) :x:
