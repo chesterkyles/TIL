@@ -118,4 +118,12 @@ Some exceptions describe HTTP error codes from the server. For example, this may
 ```
 
 ### Custom HTTP Error Pages
+Laravel makes it easy to display custom error pages for various HTTP status codes. Just create a `resources/views/errors/404.blade.php` file to customize the error page for 404 HTTP status codes. The `Symfony\Component\HttpKernel\Exception\HttpException` instance raised by the `abort` function will be passed to the view as an `$exception` variable:
+```php
+    <h2>{{ $exception->getMessage() }}</h2>
+```
 
+You may publish Laravel's default error page templates using the `vendor:publish` Artisan command. Once the templates have been published, you may customize them to your liking:
+```bash
+php artisan vendor:publish --tag=laravel-errors
+```
