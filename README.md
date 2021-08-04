@@ -12,6 +12,7 @@ The following are the summary of the things that I learned in a daily basis whet
  - [Github Workflow](#github-workflow)
  - [Amazon Web Services (AWS)](#amazon-web-services-aws)
  - [Google Cloud](#google-cloud)
+ - [Web HTTP](#web-http)
 
 ----------------------------------------------------------------------
 
@@ -50,3 +51,6 @@ Label: :x: - _I was able to learn but summary has not been created yet._
 ### Google Cloud
  - [Speech-to-Text API](google_cloud/speech-to-text.md) :x:
  - [Cloud Storage](google_cloud/cloud-storage.md) :x:
+
+### Web HTTP
+ - [Cross-Origin Resource Sharing (CORS)](web_http/cors.md) :x:
