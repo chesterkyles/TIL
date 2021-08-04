@@ -95,4 +95,76 @@ Route::middleware([EnsureTokenIsValid::class])->group(function () {
 When assigning middleware to a group of routes, you may occasionally need to prevent the middleware from being applied to an individual route within the group. You may accomplish this using the `withoutMiddleware` method. The `withoutMiddleware` method can only remove route middleware and does not apply to [global middleware](#global-middleware).
 
 ### Middleware Groups
+Sometimes you may want to group several middleware under a single key to make them easier to assign to routes. You may accomplish this using the `$middlewareGroups` property of your HTTP kernel. There are already `web` and `api` middleware groups which contain common middleware you may want to apply to your web and API routes.
+```php
+/**
+ * The application's route middleware groups.
+ *
+ * @var array
+ */
+protected $middlewareGroups = [
+    'web' => [
+        \App\Http\Middleware\EncryptCookies::class,
+        \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+        \Illuminate\Session\Middleware\StartSession::class,
+        // \Illuminate\Session\Middleware\AuthenticateSession::class,
+        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+        \App\Http\Middleware\VerifyCsrfToken::class,
+        \Illuminate\Routing\Middleware\SubstituteBindings::class,
+    ],
 
+    'api' => [
+        'throttle:api',
+        \Illuminate\Routing\Middleware\SubstituteBindings::class,
+    ],
+];
+
+// route.php
+Route::get('/', function () {
+    //
+})->middleware('web');
+
+Route::middleware(['web'])->group(function () {
+    //
+});
+```
+
+## Middleware Parameters
+Middleware can also receive additional parameters. Additional middleware parameters will be passed to the middleware after the `$next` argument:
+```php
+<?php
+
+namespace App\Http\Middleware;
+
+use Closure;
+
+class EnsureUserHasRole
+{
+    /**
+     * Handle the incoming request.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \Closure  $next
+     * @param  string  $role
+     * @return mixed
+     */
+    public function handle($request, Closure $next, $role)
+    {
+        if (! $request->user()->hasRole($role)) {
+            // Redirect...
+        }
+
+        return $next($request);
+    }
+
+}
+```
+
+Middleware parameters may be specified when defining the route by separating the middleware name and parameters with a `:`. Multiple parameters should be delimited by commas:
+```php
+Route::put('/post/{id}', function ($id) {
+    //
+})->middleware('role:editor');
+```
+
+You can read more about [middleware](https://laravel.com/docs/8.x/middleware) in the Official Laravel documentation.
