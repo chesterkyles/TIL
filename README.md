@@ -35,7 +35,7 @@ Label: :x: - _I was able to learn but summary has not been created yet._
  - [Authorizing Actions](laravel/authorization.md)
  - [Inspect and filter HTTP requests using Middleware](laravel/middleware.md)
  - [HTTP Responses](laravel/http-response.md)
- - [HTTP Requests](laravel/http-request.md) :x:
+ - [HTTP Requests](laravel/http-request.md)
  - [File Storage using Laravel's filesystem](laravel/file-storage.md) :x:
  - [Add breadcrumbs using Tabuna/Breadcrumbs package](laravel/tabuna-breadcrumbs.md) :x:
 
