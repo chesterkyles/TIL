@@ -14,8 +14,11 @@ The following are the summary of the things that I learned in a daily basis whet
 
 ----------------------------------------------------------------------
 
+Label: :x: - _I was able to learn but summary has not been created yet._
+
 ### Docker
  - [Networking in Compose](docker/networking-in-compose.md) :x:
+ - [Dockerizing nodeJS application](docker/dockerizing-nodejs.md) :x:
 
 ### Firebase
  - [Firebase For Laravel](firebase/firebase-for-laravel.md)
@@ -28,7 +31,7 @@ The following are the summary of the things that I learned in a daily basis whet
  - [Handling Errors and Exceptions](laravel/error-handling.md)
  - [Authenticate Users](laravel/authentication.md)
  - [Authorizing Actions](laravel/authorization.md)
- - [Inspect and filter HTTP requests using Middleware](laravel/middleware.md) :x:
+ - [Inspect and filter HTTP requests using Middleware](laravel/middleware.md)
  - [HTTP Responses](laravel/http-response.md) :x:
  - [HTTP Requests](laravel/http-request.md) :x:
  - [File Storage using Laravel's filesystem](laravel/file-storage.md) :x:

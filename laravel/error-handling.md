@@ -1,7 +1,7 @@
 # Error Handling
 
 ## Example
- - See example source code from Kaigo Project. [sample_http_test.php](src/sample_error_handling.php)
+ - See example source code. [sample_http_test.php](src/sample_error_handling.php)
 
 ## Introduction
 When starting a new Laravel project, error and exception handling is already configured. The `App\Exceptions\Handler` class is where all exceptions thrown by the application are logged and then rendered to the user.
