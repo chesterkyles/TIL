@@ -26,6 +26,7 @@ Label: :x: - _I was able to learn but summary has not been created yet._
  - [Create a firebase user programmatically](firebase/create-user.md)
  - [Send a push notification to a specific device](firebase/cloud-messaging.md)
  - [Verify ID tokens using Authentication](firebase/authentication.md)
+ - [Trigger a function on Cloud Storage changes](firebase/cloud-storage-triggers.md) :x:
 
 ### Laravel
  - [Create HTTP tests](laravel/http-test.md)

@@ -93,3 +93,6 @@ Route::middleware([EnsureTokenIsValid::class])->group(function () {
 ```
 
 When assigning middleware to a group of routes, you may occasionally need to prevent the middleware from being applied to an individual route within the group. You may accomplish this using the `withoutMiddleware` method. The `withoutMiddleware` method can only remove route middleware and does not apply to [global middleware](#global-middleware).
+
+### Middleware Groups
+
