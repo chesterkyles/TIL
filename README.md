@@ -53,6 +53,7 @@ Label: :x: - _I was able to learn but summary has not been created yet._
  - [AWS Cloud Development Kit](aws/cdk.md) :x:
  - [Create a CI/CD pipeline for Amazon ECS with Github Actions](aws/ecs.md) :x:
  - [Serverless Architecture](aws/serverless.md) :x:
+ - [Relational Database Service (RDS)](aws/rds.md) :x:
 
 ### Google Cloud
  - [Speech-to-Text API](google_cloud/speech-to-text.md) :x:
