@@ -24,11 +24,14 @@ Label: :x: - _I was able to learn but summary has not been created yet._
  - [Dockerizing nodeJS application](docker/dockerizing-nodejs.md) :x:
 
 ### Firebase
- - [Firebase For Laravel](firebase/firebase-for-laravel.md)
- - [Create a firebase user programmatically](firebase/create-user.md)
- - [Send a push notification to a specific device](firebase/cloud-messaging.md)
- - [Verify ID tokens using Authentication](firebase/authentication.md)
- - [Trigger a function on Cloud Storage changes](firebase/cloud-storage-triggers.md) :x:
+ - Cloud Functions
+    - [Trigger a function on Cloud Storage changes](firebase/cloud-storage-triggers.md) :x:
+
+ - Admin SDK for PHP
+    - [Firebase For Laravel](firebase/php/firebase-for-laravel.md)
+    - [Create a firebase user programmatically](firebase/php/create-user.md)
+    - [Send a push notification to a specific device](firebase/php/cloud-messaging.md)
+    - [Verify ID tokens using Authentication](firebase/php/authentication.md)
 
 ### Laravel
  - [Create HTTP tests](laravel/http-test.md)
@@ -45,6 +48,9 @@ Label: :x: - _I was able to learn but summary has not been created yet._
  - [Web application using Express framework](nodejs/express.md) :x:
  - [Network requests using Axios](nodejs/axios.md) :x:
  - [Use Embedded Javascript Templating (EJS) as Template Engine](node/ejs.md) :x:
+
+### HTML/CSS/JS
+ - [Build responsive sites with Bootstrapv4](html_css_js/bootstrap.md) :x:
 
 ### Github Workflow
  - [About Github actions](github_workflow/github-actions.md) :x:
