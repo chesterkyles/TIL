@@ -25,7 +25,7 @@ Label: :x: - _I was able to learn but summary has not been created yet._
 
 ### Firebase
  - Cloud Functions
-    - [Trigger a function on Cloud Storage changes](firebase/cloud-storage-triggers.md) :x:
+    - [Trigger a function on Cloud Storage changes](firebase/cloud_functions/cloud-storage-triggers.md) :x:
 
  - Admin SDK for PHP
     - [Firebase For Laravel](firebase/php/firebase-for-laravel.md)
