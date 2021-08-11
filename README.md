@@ -5,6 +5,10 @@ The following are the summary of the things that I learned in a daily basis whet
 
 ---------------------------------------------------------------------
 
+### Cheat Sheets
+ - [Git](cheat_sheets/git.md)
+ - [Linux Commands](cheat_sheets/linux.md)
+
 ### Categories
  - [Docker](#docker)
  - [Firebase](#firebase)
@@ -20,7 +24,7 @@ The following are the summary of the things that I learned in a daily basis whet
 Label: :x: - _I was able to learn but summary has not been created yet._
 
 ### Docker
- - [Networking in Compose](docker/networking-in-compose.md) :x:
+ - [Networking in Compose](docker/networking-in-compose.md)
  - [Dockerizing nodeJS application](docker/dockerizing-nodejs.md) :x:
 
 ### Firebase
@@ -60,6 +64,7 @@ Label: :x: - _I was able to learn but summary has not been created yet._
  - [Create a CI/CD pipeline for Amazon ECS with Github Actions](aws/ecs.md) :x:
  - [Serverless Architecture](aws/serverless.md) :x:
  - [Relational Database Service (RDS)](aws/rds.md) :x:
+ - [Elastic Load Balancing (ELB)](aws/elb.md) :x:
 
 ### Google Cloud
  - [Speech-to-Text API](google_cloud/speech-to-text.md) :x:
