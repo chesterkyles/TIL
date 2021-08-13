@@ -60,4 +60,82 @@ $spy = $this->spy(Service::class);
 $spy->shouldHaveReceived('process');
 ```
 
-## Mocking Facades
+## Mail Fake
+
+You may use the `Mail` facade's `fake` method to prevent mail from being sent. Typically, sending mail is unrelated to the code you are actually testing. After calling the `Mail` facade's `fake` method, you may then assert that mailables were instructed to be sent to users and even inspect the data the mailables received:
+
+```php
+<?php
+
+namespace Tests\Feature;
+
+use App\Mail\OrderShipped;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Support\Facades\Mail;
+use Tests\TestCase;
+
+class ExampleTest extends TestCase
+{
+    public function test_orders_can_be_shipped()
+    {
+        Mail::fake();
+
+        // Perform order shipping...
+
+        // Assert that no mailables were sent...
+        Mail::assertNothingSent();
+
+        // Assert that a mailable was sent...
+        Mail::assertSent(OrderShipped::class);
+
+        // Assert a mailable was sent twice...
+        Mail::assertSent(OrderShipped::class, 2);
+
+        // Assert a mailable was not sent...
+        Mail::assertNotSent(AnotherMailable::class);
+    }
+}
+```
+
+## Storage Fake
+
+The `Storage` facade's `fake` method allows you to easily generate a fake disk that, combined with the file generation utilities of the `Illuminate\Http\UploadedFile` class, greatly simplifies the testing of file uploads. For example:
+
+```php
+<?php
+
+namespace Tests\Feature;
+
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
+use Tests\TestCase;
+
+class ExampleTest extends TestCase
+{
+    public function test_albums_can_be_uploaded()
+    {
+        Storage::fake('photos');
+
+        $response = $this->json('POST', '/photos', [
+            UploadedFile::fake()->image('photo1.jpg'),
+            UploadedFile::fake()->image('photo2.jpg')
+        ]);
+
+        // Assert one or more files were stored...
+        Storage::disk('photos')->assertExists('photo1.jpg');
+        Storage::disk('photos')->assertExists(['photo1.jpg', 'photo2.jpg']);
+
+        // Assert one or more files were not stored...
+        Storage::disk('photos')->assertMissing('missing.jpg');
+        Storage::disk('photos')->assertMissing(['missing.jpg', 'non-existing.jpg']);
+    }
+}
+```
+
+For more info about mocking, please check the following links below:
+
+- <https://laravel.com/docs/8.x/mocking>
+- <http://docs.mockery.io/en/latest/reference/index.html>

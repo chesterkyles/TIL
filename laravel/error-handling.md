@@ -129,7 +129,7 @@ _Note: You may return `false` for certain conditions in exceptions with custom r
 Some exceptions describe HTTP error codes from the server. For example, this may be a "page not found" error (404), an "unauthorized error" (401) or even a developer generated 500 error. In order to generate such a response from anywhere in your application, you may use the `abort` helper
 
 ```php
-    abort(404)
+abort(404)
 ```
 
 ### Custom HTTP Error Pages
@@ -137,7 +137,7 @@ Some exceptions describe HTTP error codes from the server. For example, this may
 Laravel makes it easy to display custom error pages for various HTTP status codes. Just create a `resources/views/errors/404.blade.php` file to customize the error page for 404 HTTP status codes. The `Symfony\Component\HttpKernel\Exception\HttpException` instance raised by the `abort` function will be passed to the view as an `$exception` variable:
 
 ```php
-    <h2>{{ $exception->getMessage() }}</h2>
+<h2>{{ $exception->getMessage() }}</h2>
 ```
 
 You may publish Laravel's default error page templates using the `vendor:publish` Artisan command. Once the templates have been published, you may customize them to your liking:
