@@ -2,7 +2,7 @@
 
 ## Git Config (For Aliases)
 
-```
+```txt
 a = add .
 rt = restore .
 f = fetch
@@ -46,4 +46,3 @@ git branch -l <prefix>/*
 # Can delete found branches by:
 git branch -l <prefix>/* | xargs git branch -D
 ```
-

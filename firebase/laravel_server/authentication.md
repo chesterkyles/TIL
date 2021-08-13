@@ -116,7 +116,7 @@ $signInResult = $auth->signInWithRefreshToken($refreshToken);
 
 ### Sign In without a token
 
-```
+```php
 $signInResult = $auth->signInAsUser($userOrUid, array $claims = null);
 ```
 

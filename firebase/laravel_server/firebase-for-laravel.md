@@ -1,6 +1,6 @@
 # Firebase For Laravel
 
-Link: https://github.com/kreait/laravel-firebase
+Link: <https://github.com/kreait/laravel-firebase>
 
 ## Installation
 
@@ -58,4 +58,4 @@ Component | Automatic Injection | Facades | `app()`
 [Remote Config](https://firebase-php.readthedocs.io/en/stable/remote-config.html) | `\Kreait\Firebase\RemoteConfig` | `Firebase::remoteConfig()` | `app('firebase.remote_config')`
 [Cloud Storage](https://firebase-php.readthedocs.io/en/stable/cloud-storage.html) | `\Kreait\Firebase\Storage` | `Firebase::storage()` | `app('firebase.storage')`
 
-Read more here: https://github.com/kreait/laravel-firebase
+Read more here: <https://github.com/kreait/laravel-firebase>
