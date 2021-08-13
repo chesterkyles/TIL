@@ -60,6 +60,135 @@ $spy = $this->spy(Service::class);
 $spy->shouldHaveReceived('process');
 ```
 
+### Expectation Declaration
+
+### Method Call
+
+```php
+$mock->shouldReceive('name_of_method');
+
+$mock->shouldReceive('name_of_method_1', 'name_of_method_2');
+
+$mock->shouldReceive([
+    'name_of_method_1' => 'return value 1',
+    'name_of_method_2' => 'return value 2',
+]);
+
+// not expect a call
+$mock->shouldNotReceive('name_of_method');
+```
+
+### Method Arguments
+
+```php
+$mock->shouldReceive('name_of_method')
+    ->with($arg1, $arg2, ...);
+
+$mock->shouldReceive('name_of_method')
+    ->withArgs([$arg1, $arg2, ...]);
+
+// with closure function
+$mock->shouldReceive('foo')->withArgs(function ($arg) {
+    if ($arg % 2 == 0) {
+        return true;
+    }
+    return false;
+});
+
+// with any or no args
+$mock->shouldReceive('name_of_method')
+    ->withAnyArgs();
+
+$mock->shouldReceive('name_of_method')
+    ->withNoArgs();
+
+// usage:
+$mock->foo(4);
+```
+
+### Return Value
+
+```php
+$mock->shouldReceive('name_of_method')
+    ->andReturn($value);
+
+$mock->shouldReceive('name_of_method')
+    ->andReturn($value1, $value2, ...)
+
+$mock->shouldReceive('name_of_method')
+    ->andReturnValues([$value1, $value2, ...])
+
+// return null
+$mock->shouldReceive('name_of_method')
+    ->andReturnNull();
+
+// with closure function
+$mock->shouldReceive('name_of_method')
+    ->andReturnUsing(closure, ...);
+
+// return argument
+$mock->shouldReceive('name_of_method')
+    ->andReturnArg(1);
+
+// return self when mocking fluid interfaces
+$mock->shouldReceive('name_of_method')
+    ->andReturnSelf();
+```
+
+### Throwing Exceptions
+
+```php
+$mock->shouldReceive('name_of_method')
+    ->andThrow(new Exception);
+
+// with message and/or code
+$mock->shouldReceive('name_of_method')
+    ->andThrow('exception_name', 'message', 123456789);
+```
+
+### Setting Pulbic Properties
+
+```php
+$mock->shouldReceive('name_of_method')
+    ->andSet($property, $value);
+
+// or
+$mock->shouldReceive('name_of_method')
+    ->set($property, $value);
+```
+
+### Call Counts
+
+```php
+// called zero or more times
+$mock->shouldReceive('name_of_method')
+    ->zeroOrMoreTimes();
+
+// number of calls
+$mock->shouldReceive('name_of_method')
+    ->times($n);
+
+// one time only
+$mock->shouldReceive('name_of_method')
+    ->once();
+
+// two times only
+$mock->shouldReceive('name_of_method')
+    ->twice();
+
+// never called
+$mock->shouldReceive('name_of_method')
+    ->never();
+
+// modifiers
+// atLeast(), atMost(), between( , )
+$mock->shouldReceive('name_of_method')
+    ->atLeast()
+    ->times(3);
+```
+
+You may read more about expectations on this link: <http://docs.mockery.io/en/latest/reference/expectations.html>
+
 ## Mail Fake
 
 You may use the `Mail` facade's `fake` method to prevent mail from being sent. Typically, sending mail is unrelated to the code you are actually testing. After calling the `Mail` facade's `fake` method, you may then assert that mailables were instructed to be sent to users and even inspect the data the mailables received:
