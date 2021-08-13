@@ -2,24 +2,27 @@
 
 ## From Official Document
 
- - [Introduction to the Admin Database API](https://firebase.google.com/docs/database/admin/start)
- - [Create custom tokens](https://firebase.google.com/docs/auth/admin/create-custom-tokens)
- - [Verify ID Tokens](https://firebase.google.com/docs/auth/admin/verify-id-tokens)
- - [Manage Session Cookies](https://firebase.google.com/docs/auth/admin/manage-cookies)
- - [Revoke refresh tokens](https://firebase.google.com/docs/auth/admin/manage-sessions#revoke_refresh_tokens)
+- [Introduction to the Admin Database API](https://firebase.google.com/docs/database/admin/start)
+- [Create custom tokens](https://firebase.google.com/docs/auth/admin/create-custom-tokens)
+- [Verify ID Tokens](https://firebase.google.com/docs/auth/admin/verify-id-tokens)
+- [Manage Session Cookies](https://firebase.google.com/docs/auth/admin/manage-cookies)
+- [Revoke refresh tokens](https://firebase.google.com/docs/auth/admin/manage-sessions#revoke_refresh_tokens)
 
 ## Initializing the Auth component
+
 ```php
  $auth = app('firebase.auth');
 ```
 
 ## Create custom tokens
+
 ```php
 $uid = 'some-uid';
 $customToken = $auth->createCustomToken($uid);
 ```
 
-You can also optionally specify additional claims to be included in the custom token. For example,
+You can also optionally specify additional claims to be included in the custom token. For example:
+
 ```php
 $uid = 'some-uid';
 $additionalClaims = [
@@ -31,9 +34,11 @@ $customTokenString = $customToken->toString();
 ```
 
 ## Verify a Firebase Token
+
 If a Firebase client app communicates with your server, you might need to identify the currently signed-in user. To do so, verify the integrity and authenticity of the ID token and retrieve the uid from it. You can use the uid transmitted in this way to securely identify the currently signed-in user on your server.
 
 Use `Auth::verifyIdToken()` to verify an ID token:
+
 ```php
 use Firebase\Auth\Token\Exception\InvalidToken;
 
@@ -76,38 +81,47 @@ $signInResult->asTokenResponse(); // array
 *Note: Not all sign-in methods return all types of tokens.*
 
 ## Sign In Options
+
 ### Anonymous Sign In
+
 ```php
 $signInResult = $auth->signInAnonymously();
 ```
+
 *This method will create a new user in the Firebase Auth User Database each time it is invoked.*
 
 ### Sign In with Email and Password
+
 ```php
 $signInResult = $auth->signInWithEmailAndPassword($email, $clearTextPassword);
 ```
 
 ### Sign In with Email and Oob Code
+
 ```php
 $signInResult = $auth->signInWithEmailAndOobCode($email, $oobCode);
 ```
 
 ### Sign In with a Custom Token
+
 ```php
 $signInResult = $auth->signInWithCustomToken($customToken);
 ```
 
 ### Sign In with a Refresh Token
+
 ```php
 $signInResult = $auth->signInWithRefreshToken($refreshToken);
 ```
 
 ### Sign In without a token
+
 ```
 $signInResult = $auth->signInAsUser($userOrUid, array $claims = null);
 ```
 
 ## Invalidate User Session (Revoke Refresh Tokens)
+
 This will revoke all sessions for a specified user and disable any new ID tokens for existing sessions from getting minted. Existing ID tokens may remain active until their natural expiration (one hour). To verify that ID tokens are revoked, use `Auth::verifyIdToken()` with the second parameter set to `true`.
 
 If the check fails, a `RevokedIdToken` exception will be thrown.
@@ -125,6 +139,7 @@ try {
 ```
 
 ## Create a session cookie
+
 ```php
 use Kreait\Firebase\Auth\CreateSessionCookie\FailedToCreateSessionCookie;
 

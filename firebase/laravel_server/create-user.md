@@ -3,11 +3,13 @@
 The admin user management API gives you the ability to programmatically retrieve, create, update, and delete users without requiring a user’s existing credentials and without worrying about client-side rate limiting.
 
 ## Initializing the Auth component
+
 ```php
  $auth = app('firebase.auth');
 ```
 
 ## Get information about a specific User
+
 ```php
 try {
     $user = $auth->getUser('some-uid');
@@ -19,6 +21,7 @@ try {
 ```
 
 ### Create a User
+
 The Admin SDK provides a method that allows you to create a new Firebase Authentication user. This method accepts an object containing the profile information to include in the newly created user account:
 
 ```php
@@ -73,6 +76,4 @@ Property | Type | Description
 `photoURL` | string | The user’s photo URL.
 `disabled` | boolean | Whether or not the user is disabled. true for disabled; false for enabled. If not provided, the default is false.
 
-
 You can read full documentation of Firebase Admin SDK [here](https://firebase-php.readthedocs.io/en/latest/user-management.html).
-

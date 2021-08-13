@@ -1,6 +1,7 @@
 # Git
 
 ## Git Config (For Aliases)
+
 ```
 a = add .
 rt = restore .
@@ -30,11 +31,15 @@ brdall = !sh -c 'git branch -l | xargs git branch -D' -
 ```
 
 ## Git commands
+
 ### Get current branch
+
 ```sh
 git rev-parse --abbrev-ref HEAD
 ```
+
 ### Get all local branches with prefix
+
 ```sh
 git branch -l <prefix>/*
 

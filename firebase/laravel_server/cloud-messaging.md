@@ -3,11 +3,13 @@
 You can use the Firebase Admin SDK for PHP to send Firebase Cloud Messaging messages to end-user devices. Specifically, you can send messages to individual devices, named topics, or condition statements that match one or more topics.
 
 ## Initializing the Messaging Component
+
 ```php
 $messaging = app('firebase.messaging');
 ```
 
 ## Getting Started
+
 ```php
 use Kreait\Firebase\Messaging\CloudMessage;
 
@@ -48,41 +50,43 @@ $messaging->send($message);
 ```
 
 ### Access these registration tokens
+
 1. Configure Web Credentials with FCM
 
-The FCM Web interface uses Web credentials called "Voluntary Application Server Identification," or "VAPID" keys, to authorize send requests to supported web push services. To subscribe your app to push notifications, you need to associate a pair of keys with your Firebase project. You can either [generate a new key pair](https://firebase.google.com/docs/cloud-messaging/js/client#generate_a_new_key_pair) or [import your existing key pair](https://firebase.google.com/docs/cloud-messaging/js/client#import_an_existing_key_pair) through the Firebase Console.
+    The FCM Web interface uses Web credentials called "Voluntary Application Server Identification," or "VAPID" keys, to authorize send requests to supported web push services. To subscribe your app to push notifications, you need to associate a pair of keys with your Firebase project. You can either [generate a new key pair](https://firebase.google.com/docs/cloud-messaging/js/client#generate_a_new_key_pair) or [import your existing key pair](https://firebase.google.com/docs/cloud-messaging/js/client#import_an_existing_key_pair) through the Firebase Console.
 
 2. Configure Web Credentials in your app
 
-The method `getToken(): Promise<string>` allows FCM to use the VAPID key credential when sending message requests to different push services. Using the key you generated or imported according to the instructions in Configure Web Credentials with FCM, add it in your code after the messaging object is retrieved:
+    The method `getToken(): Promise<string>` allows FCM to use the VAPID key credential when sending message requests to different push services. Using the key you generated or imported according to the instructions in Configure Web Credentials with FCM, add it in your code after the messaging object is retrieved:
 
-```js
-// Add the public key generated from the console here.
-messaging.getToken({vapidKey: "BKagOny0KF_2pCJQ3m....moL0ewzQ8rZu"});
-```
+    ```js
+    // Add the public key generated from the console here.
+    messaging.getToken({vapidKey: "BKagOny0KF_2pCJQ3m....moL0ewzQ8rZu"});
+    ```
 
 3. Access the token
 
-When you need to retrieve the current registration token for an app instance, call `getToken`. If notification permission has not been granted, this method will ask the user for notification permissions. Otherwise, it returns a token or rejects the promise due to an error.
+    When you need to retrieve the current registration token for an app instance, call `getToken`. If notification permission has not been granted, this method will ask the user for notification permissions. Otherwise, it returns a token or rejects the promise due to an error.
 
-The messaging service requires a `firebase-messaging-sw.js` file. Unless you already have a `firebase-messaging-sw.js` file, create an empty file with that name and place it in the root of your domain before retrieving a token. You can add meaningful content to the file later in the client setup process.
+    The messaging service requires a `firebase-messaging-sw.js` file. Unless you already have a `firebase-messaging-sw.js` file, create an empty file with that name and place it in the root of your domain before retrieving a token. You can add meaningful content to the file later in the client setup process.
 
 To retrieve the current token:
+
 ```js
 // Get registration token. Initially this makes a network call, once retrieved
 // subsequent calls to getToken will return from cache.
 messaging.getToken({ vapidKey: '<YOUR_PUBLIC_VAPID_KEY_HERE>' }).then((currentToken) => {
-  if (currentToken) {
+if (currentToken) {
     // Send the token to your server and update the UI if necessary
     // ...
-  } else {
+} else {
     // Show permission request UI
     console.log('No registration token available. Request permission to generate one.');
     // ...
-  }
+}
 }).catch((err) => {
-  console.log('An error occurred while retrieving token. ', err);
-  // ...
+console.log('An error occurred while retrieving token. ', err);
+// ...
 });
 ```
 
@@ -91,6 +95,7 @@ After you've obtained the token, send it to your app server and store it using y
 ## Changing the message target
 
 You can change the target of an already created message with the `withChangedTarget()` method.
+
 ```php
 use Kreait\Firebase\Messaging\CloudMessage;
 

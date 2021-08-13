@@ -1,15 +1,19 @@
 # Middleware
 
 ## Example
- - See example source code. [sample_middleware.php](src/sample_middleware.php)
+
+- See example source code that I have written. [sample_middleware.php](src/sample_middleware.php)
 
 ## Defining Middleware
+
 To create a new middleware, use the `make:middleware` Artisan command:
+
 ```bash
 php artisan make:middleware EnsureTokenIsValid
 ```
 
 This command will place a new `EnsureTokenIsValid` class within your `app/Http/Middleware` directory. In this middleware, we will only allow access to the route if the supplied `token` input matches a specified value. Otherwise, we will redirect the users back to the `home` URI:
+
 ```php
 <?php
 
@@ -38,11 +42,15 @@ class EnsureTokenIsValid
 ```
 
 ## Registering Middleware
+
 ### Global Middleware
+
 If you want a middleware to run during every HTTP request to your application, list the middleware class in the `$middleware` property of your `app/Http/Kernel.php` class.
 
 ### Assigning Middleware to Routes
+
 If you would like to assign middleware to specific routes, you should first assign the middleware a key in your application's `app/Http/Kernel.php` file. By default, the `$routeMiddleware` property of this class contains entries for the middleware included with Laravel. You may add your own middleware to this list and assign it a key of your choosing:
+
 ```php
 // Within App\Http\Kernel class...
 
@@ -60,6 +68,7 @@ protected $routeMiddleware = [
 ```
 
 Once the middleware has been defined in the HTTP kernel, you may use the `middleware` method to assign middleware to a route:
+
 ```php
 // single middleware
 Route::get('/profile', function () {
@@ -95,7 +104,9 @@ Route::middleware([EnsureTokenIsValid::class])->group(function () {
 When assigning middleware to a group of routes, you may occasionally need to prevent the middleware from being applied to an individual route within the group. You may accomplish this using the `withoutMiddleware` method. The `withoutMiddleware` method can only remove route middleware and does not apply to [global middleware](#global-middleware).
 
 ### Middleware Groups
+
 Sometimes you may want to group several middleware under a single key to make them easier to assign to routes. You may accomplish this using the `$middlewareGroups` property of your HTTP kernel. There are already `web` and `api` middleware groups which contain common middleware you may want to apply to your web and API routes.
+
 ```php
 /**
  * The application's route middleware groups.
@@ -130,7 +141,9 @@ Route::middleware(['web'])->group(function () {
 ```
 
 ## Middleware Parameters
+
 Middleware can also receive additional parameters. Additional middleware parameters will be passed to the middleware after the `$next` argument:
+
 ```php
 <?php
 
@@ -161,6 +174,7 @@ class EnsureUserHasRole
 ```
 
 Middleware parameters may be specified when defining the route by separating the middleware name and parameters with a `:`. Multiple parameters should be delimited by commas:
+
 ```php
 Route::put('/post/{id}', function ($id) {
     //

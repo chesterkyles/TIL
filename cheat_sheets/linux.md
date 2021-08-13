@@ -1,6 +1,7 @@
 # Linux Commands
 
 ## Basic Commands
+
 ```sh
 sudo              # superuser privileges
 cd <dir>          # change directory
@@ -17,10 +18,12 @@ rm <file>         # remove file
 rm -rf <dir>      # remove folder, subfolder, and files
 rmdir <dir>       # remove a directory
 clear             # clears the terminal
+history           # prints a list of all past commands
 nano <file>       # open file or create file if not exist
 ```
 
 ### Nano Commands
+
 ```sh
 Ctrl-R            # Read file
 Ctrl-O            # Save file
@@ -28,7 +31,9 @@ Ctrl-X            # Close file
 ```
 
 ## Additional Info
+
 ### Output to File (removed Unix colors)
+
 ```sh
 <some command here> | sed "s/\x1b\[[0-9;]*m//g" > output.txt
 ```
