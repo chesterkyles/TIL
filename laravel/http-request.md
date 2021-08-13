@@ -210,6 +210,7 @@ $archived = $request->boolean('archived');
 #### Retrieving Input via Dynamic Properties
 
 For example, if one of the application's form contains a `name` field, you may access the value of the field like so:
+
 ```php
 $name = $request->name;
 ```

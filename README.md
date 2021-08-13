@@ -4,7 +4,7 @@ TIL: Today I Learned
 
 The following are the summary of the things that I learned in a daily basis whether by reading books, articles or by trying to implement state-of-the-art technologies. Note that what I have written are just concise explanations on various technologies that I am trying to learn. Also, some of them are mere summarized version of the official documentation since the documentation is better in explaining things than me :relaxed:. The things that I listed below are based on the learnings I had while doings tasks and/or knowledge acquired from implementing/coding whenever something catches my interest.
 
----------------------------------------------------------------------
+---
 
 ## Things I Learned
 
@@ -25,7 +25,7 @@ The following are the summary of the things that I learned in a daily basis whet
 - [Google Cloud](#google-cloud)
 - [Web HTTP](#web-http)
 
---------
+---
 
 Label: :x: - _I was able to learn but summary has not been created yet._
 
@@ -55,7 +55,7 @@ Label: :x: - _I was able to learn but summary has not been created yet._
 - [HTTP Responses](laravel/http-response.md)
 - [HTTP Requests](laravel/http-request.md)
 - [File Storage using Laravel's filesystem](laravel/file-storage.md)
-- [Mocking Objects for Testing](laravel/mocking.md) :x:
+- [Mocking Objects for Testing](laravel/mocking.md)
 - [Add breadcrumbs using Tabuna/Breadcrumbs package](laravel/tabuna-breadcrumbs.md) :x:
 
 ### Node.js
