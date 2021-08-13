@@ -1,5 +1,9 @@
 # Firebase
 
+## Android Client App
+
+- [Cloud Messaging using FirebaseMessaging API](android_client/messaging.md) :x:
+
 ## Firebase Project
 
 - [Trigger a function on Cloud Storage changes](firebase_project/cloud_functions/cloud-storage-triggers.md) :x:

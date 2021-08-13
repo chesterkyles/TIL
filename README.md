@@ -36,14 +36,17 @@ Label: :x: - _I was able to learn but summary has not been created yet._
 
 ### Firebase
 
+- Android Client App
+  - [Cloud Messaging using FirebaseMessaging API](firebase/android_client/messaging.md) :x:
+
 - Firebase Project
-  - [Trigger a function on Cloud Storage changes](firebase_project/cloud_functions/cloud-storage-triggers.md) :x:
+  - [Trigger a function on Cloud Storage changes](firebase/firebase_project/cloud_functions/cloud-storage-triggers.md) :x:
 
 - Admin SDK for PHP
-  - [Firebase For Laravel](laravel_server/firebase-for-laravel.md)
-  - [Create a firebase user programmatically](laravel_server/create-user.md)
-  - [Send a push notification to a specific device](laravel_server/cloud-messaging.md)
-  - [Verify ID tokens using Authentication](laravel_server/authentication.md)
+  - [Firebase For Laravel](firebase/laravel_server/firebase-for-laravel.md)
+  - [Create a firebase user programmatically](firebase/laravel_server/create-user.md)
+  - [Send a push notification to a specific device](firebase/laravel_server/cloud-messaging.md)
+  - [Verify ID tokens using Authentication](firebase/laravel_server/authentication.md)
 
 ### Laravel
 
