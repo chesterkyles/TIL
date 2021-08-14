@@ -13,17 +13,11 @@ INSTRUCTION arguments
 
 Note that the instruction is not case-senstitive; however, the convention is to use UPPERCASE to distinguish them from arguments more easily.
 
-Docker runs instructions in a `Dockerfile` in order. A `Dockerfile` **must begin with a `FROM` instruction**. The `FROM` instruction specified the _Parent Image_ from which you are building which may be preceded by one or more `ARG` instructions.
-
-Docker treats lines that _begin_ with a `#` as a comment, unless the line is a valid parser directive. A `#` marker anywhere else in a line is treated as an argument.
-
 Read more about `format` here: <https://docs.docker.com/engine/reference/builder/#format>
 
 ## Parser Directives
 
-Parser directives are optional. They do not addl layers to the build, and will not be shown as a build step. They are written as special type of comment in the form `# directive=value`.
-
-Once a comment, empty line or builder instruction has been processed, Docker no longer looks for parser directives. Instead, it treats anything formatted as a parser directive as a comment and does not attempt to validate if it might be a parser directive. Therefore, all parser directives must be at the very top of a `Dockerfile`.
+Parser directives are optional. They do not add layers to the build, and will not be shown as a build step. They are written as special type of comment in the form `# directive=value`.
 
 Read more about Parser Directives here: <https://docs.docker.com/engine/reference/builder/#parser-directives>
 
@@ -44,8 +38,6 @@ The syntax directive defines the location of the Dockerfile syntax that is used 
 
 ```dockerfile
 # escape=\ (backslash)
-
-# OR
 
 # escape=` (backtick)
 ```
@@ -115,7 +107,7 @@ Detailed examples are shared on this link: <https://docs.docker.com/engine/refer
 
 ## FROM
 
-```Dockerfile
+```dockerfile
 FROM [--platform=<platform>] <image> [AS <name>]
 # or
 FROM [--platform=<platform>] <image>[:<tag>] [AS <name>]
@@ -123,3 +115,176 @@ FROM [--platform=<platform>] <image>[:<tag>] [AS <name>]
 FROM [--platform=<platform>] <image>[@<digest>] [AS <name>]
 ```
 
+The `FROM` instruction initializes a new build stage and sets the Base Image for subsequent instructions. As such, a valid `Dockerfile` must start with a `FROM` instruction.
+
+- `ARG` is the only instruction that may precede `FROM` in the `Dockerfile`
+- `FROM` can appear multiple times within a single `Dockerfile` to create multiple images or use on build stage as a dependency for another.
+- Optionally, a name can be given to a new build stage by adding `AWS name` to the `FROM` instruction. This can be used in subsequent `FROM` and `COPY --from=<name>` instructions to refer to the image built in this stage.
+- The `tag` or `digest` values are optional. If they are ommitted, the builder assumes a `latest` tag by default. The builder, however, returns an error if it cannot find the `tag` value.
+- The optional `--platform` flag can be used to specify the platform of the image in case `FROM` references a multi-platform image. For example, `linux/amd64`, `limux/arm64`, or `windows/amd64`.
+
+### Understand how ARG and FROM interact
+
+`FROM` instructions support variables that are declared by any `ARG` instructions that occur before the first `FROM`.
+
+```dockerfile
+ARG  CODE_VERSION=latest
+FROM base:${CODE_VERSION}
+CMD  /code/run-app
+
+FROM extras:${CODE_VERSION}
+CMD  /code/run-extras
+```
+
+## RUN
+
+This instruction has 2 forms:
+
+- `RUN <command>` (_shell_ form, the command is run in a shell, which by default is `/bin/sh -c` on Linux or `cmd /S /C` on Windows)
+- `RUN ["executable", "param1", "param2"]` (_exec_ form)
+
+The `RUN` instruction will execute any commands in a new layer on top of the current image and commit the results. The resulting committed image will be used for the next step in the `Dockerfile`.
+
+In the _shell_ form you can use a `\` (backslash) to continue a single `RUN` instruction onto the next line. For example, consider these two lines:
+
+```dockerfile
+RUN /bin/bash -c 'source $HOME/.bashrc; \
+echo $HOME'
+
+# or
+
+RUN /bin/bash -c 'source $HOME/.bashrc; echo $HOME'
+
+# or, in exec form, using different shell other than '/bin/sh'
+
+RUN ["/bin/bash", "-c", "echo hello"]
+```
+
+Unlike the _shell_ form, the exec form does not invoke a command shell. This means that normal shell processing does not happen. For example, `RUN [ "echo", "$HOME" ]` will not do variable substitution on `$HOME`.  If you want shell processing then either use the _shell_ form or execute a shell directly, for example: `RUN [ "sh", "-c", "echo $HOME" ]`.
+
+Note that the cache for `RUN` instructions isn’t invalidated automatically during the next build. The cache for an instruction like `RUN apt-get dist-upgrade -y` will be reused during the next build. The cache for `RUN` instructions can be invalidated by using the `--no-cache` flag, for example `docker build --no-cache`.
+
+## CMD
+
+This instruction has three forms:
+
+- `CMD ["executable", "param1", "param2"]` (_exec_ form, preferred form)
+- `CMD ["param1", "param2"]` (as _default parameters_ to _ENTRYPOINT_)
+- `CMD command param1 param2` (_shell_ form)
+
+There can only be one `CMD` instruction in a Dockerfile. If you list more than one `CMD` then only the last `CMD` will take effect.
+
+**The main purpose of a `CMD` is to provide defaults for an executing container**. These defaults can include an executable, or they can omit the executable, in which case you must specify an ENTRYPOINT instruction as well.
+
+If `CMD` is used to provide default arguments for the `ENTRYPOINT` instruction, both the `CMD` and `ENTRYPOINT` instructions should be specified with the JSON array format.
+
+Note that same with `RUN` instruction, the _exec_ form does not invoke a command shell. Also, `ENTRYPOINT` is used in combination with `CMD` to have the container run the same executable every time.
+
+## LABEL
+
+```dockerfile
+LABEL <key>=<value> <key>=<value> <key>=<value> ...
+```
+
+The `LABEL` instruction adds metadata to an image. A `LABEL` is a key-value pair. To include spaces within a `LABEL` value, use quotes and backslashes as you would in command-line parsing. A few usage examples:
+
+```dockerfile
+LABEL "com.example.vendor"="ACME Incorporated"
+LABEL com.example.label-with-value="foo"
+LABEL version="1.0"
+LABEL description="This text illustrates \
+that label-values can span multiple lines."
+LABEL multi.label1="value1" multi.label2="value2" other="value3"
+LABEL multi.label1="value1" \
+      multi.label2="value2" \
+      other="value3"
+```
+
+To view an image's labels, use `docker image inspect` command. Use `--format` option to show just the labels:
+
+```sh
+$ docker image inspect --format='' myimage
+
+{
+  "com.example.vendor": "ACME Incorporated",
+  "com.example.label-with-value": "foo",
+  "version": "1.0",
+  "description": "This text illustrates that label-values can span multiple lines.",
+  "multi.label1": "value1",
+  "multi.label2": "value2",
+  "other": "value3"
+}
+```
+
+## EXPOSE
+
+```dockerfile
+EXPOSE <port> [<port>/<protocol>...]
+```
+
+The `EXPOSE` instruction informs Docker that the container listens on the specified network ports at runtime. You can specify whether the port listens on TCP or UDP, and the default is TCP if the protocol is not specified.
+
+This instruction acts as a type of documentation only. It does not actually publish the port. To actually publish the port, use the `-p` flag on docker run to publish and map one or more ports, or the `-P` flag to publish all exposed ports and map them to high-order ports.
+
+By default, `EXPOSE` assumes `TCP`. You can also specify `UDP`:
+
+```dockerfile
+EXPOSE 80/udp
+
+# or to expose both
+
+EXPOSE 80/tcp
+EXPOSE 80/udp
+```
+
+## ENV
+
+```dockerfile
+ENV <key>=<value> ...
+```
+
+The `ENV` instruction sets the environment variable `<key>` to the value `<value>`. The value will be interpreted for other environment variables, so quote characters will be removed if they are not escaped. Examples are:
+
+```dockerfile
+ENV MY_NAME="John Doe"
+ENV MY_DOG=Rex\ The\ Dog
+ENV MY_CAT=fluffy
+
+# or
+ENV MY_NAME="John Doe" MY_DOG=Rex\ The\ Dog \
+    MY_CAT=fluffy
+```
+
+The environment variables set using `ENV` will persist when a container is run from the resulting image. You can view the values using `docker inspect`, and change them using `docker run --env <key>=<value>`.
+
+## ADD
+
+This instruction has two forms:
+
+```dockerfile
+ADD [--chown=<user>:<group>] <src>... <dest>
+
+# paths containing whitespace
+ADD [--chown=<user>:<group>] ["<src>",... "<dest>"]
+```
+
+The `ADD` instruction copies new files, directories or remote file URLs from `<src>` and adds them to the filesystem of the image at the path `<dest>`. For example:
+
+```dockerfile
+# to <WORKDIR>/relativeDir/
+ADD test.txt relativeDir/
+
+# to /absoluteDir/
+ADD test.txt /absoluteDir/
+```
+
+You may read more about different example for `ADD` instruction [here](https://docs.docker.com/engine/reference/builder/#add).
+
+All new files and directories are created with a UID and GID of 0, unless the optional `--chown` flag specifies a given username, groupname, or UID/GID combination to request specific ownership of the content added. For example:
+
+```dockerfile
+ADD --chown=55:mygroup files* /somedir/
+ADD --chown=bin files* /somedir/
+ADD --chown=1 files* /somedir/
+ADD --chown=10:11 files* /somedir/
+```
