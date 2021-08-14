@@ -44,7 +44,7 @@ The following are the summary of the things that I learned in a daily basis whet
 
 ### Docker
 
-- [Dockerfile Commands](docker/dockerfile-commands.md)
+- [Dockerfile](docker/dockerfile-entries.md)
 - [Networking in Compose](docker/networking-in-compose.md)
 - [Dockerizing nodeJS application](docker/dockerizing-nodejs.md) [![label: summary][~summary]][summary]
 
@@ -105,6 +105,12 @@ The following are the summary of the things that I learned in a daily basis whet
 ### Web HTTP
 
 - [Cross-Origin Resource Sharing (CORS)](web_http/cors.md) [![label: read][~read]][read]
+
+---
+
+## Note
+
+This repository is used for solely personal purposes. Everything written here are not used nor distributed for commercial purposes. Mostly written here are mere summaries of official documentations.
 
 [~read]: https://img.shields.io/github/labels/chestercolita/til/read
 [read]: https://github.com/chestercolita/til/labels/read
