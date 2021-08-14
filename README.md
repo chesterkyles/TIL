@@ -16,9 +16,6 @@ The following are the summary of the things that I learned in a daily basis whet
 
 ### Categories
 
-- [Cheat Sheets](#cheat-sheets)
-- [Categories](#categories)
-- [Labels](#labels)
 - [Docker](#docker)
 - [Firebase](#firebase)
 - [Laravel](#laravel)
