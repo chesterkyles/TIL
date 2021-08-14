@@ -1,9 +1,6 @@
 # Dockerfile
-
 Docker can build images automitaclly by reading the instructions from a `Dockerfile`. It is a text document taht contains all the commands a user could call on the command line to assemble an image.
-
 ## Format
-
 Here is the format of the `Dockerfile`:
 ```dockerfile
 # Comment
