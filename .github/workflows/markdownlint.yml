@@ -16,3 +16,4 @@ jobs:
           reporter: github-pr-review
           level: warning
           filter_mode: nofilter
+          markdownlint_flags: "-c .markdownlint.json"

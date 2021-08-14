@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/chestercolita/til#readme",
   "dependencies": {
-    "markdownlint-cli2": "^0.2.0"
+    "markdownlint-cli": "^0.28.1"
   }
 }
