@@ -3,8 +3,6 @@ on:
   push:
     branches:
       - 'summary/**'
-    branches-ignore:
-      - main
   pull_request:
     branches:
       - 'summary/**'
@@ -14,9 +12,17 @@ jobs:
     name: runner / markdownlint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: markdownlint
-        uses: reviewdog/action-markdownlint@v0.1
+      - uses: actions/checkout@v2
+      - name: markdownlint-github-check
+        uses: ./
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          reporter: github-check
+          level: warning
+          filter_mode: nofilter
+
+      - name: markdownlint-github-pr-review
+        uses: ./
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           reporter: github-pr-review
