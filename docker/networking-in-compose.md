@@ -40,3 +40,40 @@ When running `docker-compose up`, the following happens:
 ## When updating containers
 
 If you make a configuration change to a service and run `docker-compose up` to update it, the **old container is removed** and the new one joins the network under a different IP address but the same name. Running containers can look up that name and connect to the new address, but the old address stops working.
+
+## Specify custom networks
+
+Instead of the default app network, you can specify own networks with the top-level `networks` key. Each service can specify what networks to connect to with the _service-level_ `networks` key, which is a list of names referencing entires under the _top-level_ `networks` key. Below is an example with `proxy` service isolated from the `db` service, i.e. they do not share a network in common, only `app` can talk to both:
+```yml
+version: "3.9"
+
+services:
+  proxy:
+    build: ./proxy
+    networks:
+      - frontend
+  app:
+    build: ./app
+    networks:
+      - frontend
+      - backend
+  db:
+    image: postgres
+    networks:
+      - backend
+
+networks:
+  frontend:
+    # Use a custom driver
+    driver: custom-driver-1
+  backend:
+    # Use a custom driver which takes special options
+    driver: custom-driver-2
+    driver_opts:
+    foo: "1"
+    bar: "2"
+```
+
+Networks can be configured with static IP addresses by setting the `ipv4_address` and/or `ipv6_address` for each attached network.
+
+You may want to read more about networking here: <https://docs.docker.com/compose/networking/>
