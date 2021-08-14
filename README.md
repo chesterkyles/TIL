@@ -44,6 +44,7 @@ The following are the summary of the things that I learned in a daily basis whet
 
 ### Docker
 
+- [Dockerfile Commands](docker/dockerfile-commands.md)
 - [Networking in Compose](docker/networking-in-compose.md)
 - [Dockerizing nodeJS application](docker/dockerizing-nodejs.md) [![label: summary][~summary]][summary]
 
