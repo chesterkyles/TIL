@@ -5,7 +5,6 @@ Docker can build images automitaclly by reading the instructions from a `Dockerf
 ## Format
 
 Here is the format of the `Dockerfile`:
-
 ```dockerfile
 # Comment
 INSTRUCTION arguments
