@@ -44,6 +44,7 @@ If you make a configuration change to a service and run `docker-compose up` to u
 ## Specify custom networks
 
 Instead of the default app network, you can specify own networks with the top-level `networks` key. Each service can specify what networks to connect to with the _service-level_ `networks` key, which is a list of names referencing entires under the _top-level_ `networks` key. Below is an example with `proxy` service isolated from the `db` service, i.e. they do not share a network in common, only `app` can talk to both:
+
 ```yml
 version: "3.9"
 
