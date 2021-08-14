@@ -1,0 +1,22 @@
+{
+  "name": "til",
+  "version": "1.0.0",
+  "description": "TIL: Today I Learned",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chestercolita/til.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chestercolita/til/issues"
+  },
+  "homepage": "https://github.com/chestercolita/til#readme",
+  "dependencies": {
+    "markdownlint-cli2": "^0.2.0"
+  }
+}

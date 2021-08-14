@@ -1,34 +1,21 @@
-name: Lint Markdown on Push
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+name: reviewdog
+on: [pull_request]
 
 jobs:
-  write_good_job:
+  markdownlint:
+    name: runner / markdownlint
     runs-on: ubuntu-latest
-    name: A job to lint Markdown files
     steps:
-    - uses: actions/checkout@v2
+      - name: Check out Git repository
+        uses: actions/checkout@v2
 
-    - name: write-good action step
-      id: write-good
-      uses: tomwhross/write-good-action@v1.2
+      - uses: reviewdog/action-setup@v1
+        with:
+          reviewdog_version: latest
 
-    # Use the output from the `write-good` step
-    - name: Get the write-good output
-      run: echo "${{ steps.write-good.outputs.result }}"
-
-    - name: Post comment
-      uses: mshick/add-pr-comment@v1
-      if: ${{ steps.write-good.outputs.result }}
-      with:
-        message: |
-          ${{ steps.write-good.outputs.result }}
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        repo-token-user-login: 'github-actions[bot]'
-        allow-repeats: false
-        
+      - name: markdownlint
+        env:
+          REVIEWDOG_GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          npm install
+          node_modules/.bin/markdownlint-cli2 "**/*.md" "#node_modules" | reviewdog -reporter=github-pr-review -filter-mode=file -efm='%f:%l:%c:%m'
