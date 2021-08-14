@@ -16,10 +16,14 @@ The following are the summary of the things that I learned in a daily basis whet
 
 ### Categories
 
+- [Cheat Sheets](#cheat-sheets)
+- [Categories](#categories)
+- [Labels](#labels)
 - [Docker](#docker)
 - [Firebase](#firebase)
 - [Laravel](#laravel)
 - [Node.js](#nodejs)
+- [HTML/CSS/JS](#htmlcssjs)
 - [Github Workflow](#github-workflow)
 - [Amazon Web Services (AWS)](#amazon-web-services-aws)
 - [Google Cloud](#google-cloud)
@@ -27,20 +31,32 @@ The following are the summary of the things that I learned in a daily basis whet
 
 ---
 
-Label: :x: - _I was able to learn but summary has not been created yet._
+### Labels
+
+[![label: summary][~summary]][summary]
+[![label: read][~read]][read]
+[![label: update][~update]][update]
+
+```txt
+- summary - I was able to learn but have not written summary yet
+- read - Topics that I want to read in the future
+- update - File is in need for an update
+```
+
+---
 
 ### Docker
 
 - [Networking in Compose](docker/networking-in-compose.md)
-- [Dockerizing nodeJS application](docker/dockerizing-nodejs.md) :x:
+- [Dockerizing nodeJS application](docker/dockerizing-nodejs.md) [![label: summary][~summary]][summary]
 
 ### Firebase
 
 - Android Client App
-  - [Cloud Messaging using FirebaseMessaging API](firebase/android_client/messaging.md) :x:
+  - [Cloud Messaging using FirebaseMessaging API](firebase/android_client/messaging.md) [![label: update][~update]][update]
 
 - Firebase Project
-  - [Trigger a function on Cloud Storage changes](firebase/firebase_project/cloud_functions/cloud-storage-triggers.md) :x:
+  - [Trigger a function on Cloud Storage changes](firebase/firebase_project/cloud_functions/cloud-storage-triggers.md) [![label: read][~read]][read] ![label: summary][~summary]
 
 - Admin SDK for PHP
   - [Firebase For Laravel](firebase/laravel_server/firebase-for-laravel.md)
@@ -59,35 +75,42 @@ Label: :x: - _I was able to learn but summary has not been created yet._
 - [HTTP Requests](laravel/http-request.md)
 - [File Storage using Laravel's filesystem](laravel/file-storage.md)
 - [Mocking Objects for Testing](laravel/mocking.md)
-- [Add breadcrumbs using Tabuna/Breadcrumbs package](laravel/tabuna-breadcrumbs.md) :x:
+- [Add breadcrumbs using Tabuna/Breadcrumbs package](laravel/tabuna-breadcrumbs.md) ![label: summary][~summary]
 
 ### Node.js
 
-- [Web application using Express framework](nodejs/express.md) :x:
-- [Network requests using Axios](nodejs/axios.md) :x:
-- [Use Embedded Javascript Templating (EJS) as Template Engine](node/ejs.md) :x:
+- [Web application using Express framework](nodejs/express.md) [![label: read][~read]][read]
+- [Network requests using Axios](nodejs/axios.md) [![label: read][~read]][read]
+- [Use Embedded Javascript Templating (EJS) as Template Engine](node/ejs.md) [![label: read][~read]][read]
 
 ### HTML/CSS/JS
 
-- [Build responsive sites with Bootstrapv4](html_css_js/bootstrap.md) :x:
+- [Build responsive sites with Bootstrapv4](html_css_js/bootstrap.md) ![label: summary][~summary] [![label: update][~update]][update]
 
 ### Github Workflow
 
-- [About Github actions](github_workflow/github-actions.md) :x:
+- [About Github actions](github_workflow/github-actions.md) [![label: read][~read]][read]
 
 ### Amazon Web Services (AWS)
 
-- [AWS Cloud Development Kit](aws/cdk.md) :x:
-- [Create a CI/CD pipeline for Amazon ECS with Github Actions](aws/ecs.md) :x:
-- [Serverless Architecture](aws/serverless.md) :x:
-- [Relational Database Service (RDS)](aws/rds.md) :x:
-- [Elastic Load Balancing (ELB)](aws/elb.md) :x:
+- [AWS Cloud Development Kit](aws/cdk.md) [![label: read][~read]][read]
+- [Create a CI/CD pipeline for Amazon ECS with Github Actions](aws/ecs.md) [![label: read][~read]][read]
+- [Serverless Architecture](aws/serverless.md) [![label: read][~read]][read]
+- [Relational Database Service (RDS)](aws/rds.md) [![label: read][~read]][read]
+- [Elastic Load Balancing (ELB)](aws/elb.md) [![label: read][~read]][read]
 
 ### Google Cloud
 
-- [Speech-to-Text API](google_cloud/speech-to-text.md) :x:
-- [Cloud Storage](google_cloud/cloud-storage.md) :x:
+- [Speech-to-Text API](google_cloud/speech-to-text.md) [![label: read][~read]][read]
+- [Cloud Storage](google_cloud/cloud-storage.md) [![label: read][~read]][read]
 
 ### Web HTTP
 
-- [Cross-Origin Resource Sharing (CORS)](web_http/cors.md) :x:
+- [Cross-Origin Resource Sharing (CORS)](web_http/cors.md) [![label: read][~read]][read]
+
+[~read]: https://img.shields.io/github/labels/chestercolita/til/read
+[read]: https://github.com/chestercolita/til/labels/read
+[~summary]: https://img.shields.io/github/labels/chestercolita/til/summary
+[summary]: https://github.com/chestercolita/til/labels/summary
+[~update]: https://img.shields.io/github/labels/chestercolita/til/update
+[update]: https://github.com/chestercolita/til/labels/update
