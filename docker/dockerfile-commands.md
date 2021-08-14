@@ -1,7 +1,10 @@
 # Dockerfile
+
 Docker can build images automitaclly by reading the instructions from a `Dockerfile`. It is a text document taht contains all the commands a user could call on the command line to assemble an image.
+
 ## Format
 Here is the format of the `Dockerfile`:
+
 ```dockerfile
 # Comment
 INSTRUCTION arguments
@@ -16,3 +19,6 @@ Docker treats lines that _begin_ with a `#` as a comment, unless the line is a v
 Read more about `format` here: <https://docs.docker.com/engine/reference/builder/#format>
 
 ## Parser Directives
+ddsds
+
+Docker can build images automitaclly by reading the instructions from a `Dockerfile`. It is a text document taht contains all the commands a user could call on the command line to assemble an image.
