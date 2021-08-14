@@ -32,7 +32,9 @@ When running `docker-compose up`, the following happens:
 ### Important Notes
 
 - Each container can now look up the hostname `web` or `db`. For example, `web`'s application code could connect to the URL `postgres://db:5432` and start using the Postgres database.
+
 - The distinction between `HOST_PORT` and `CONTAINER_POST` should be noted. In the example, the `HOST_PORT` for `db` is `8001` and the `CONTAINER_POST` is `5432`. Networked service-to-service communication uses the `CONTAINER_PORT`. When the `HOST_PORT` is defined, the service is accssible outside the swarm as well.
+
 - Within the `web` container, the connection string to `db` would look like `postgres://db:5432`, and from the host machine, the connection string would look like `postgres://{DOCKER_IP}:8001`.
 
 ## When updating containers
