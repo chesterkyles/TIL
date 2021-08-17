@@ -94,8 +94,7 @@ The main purpose of this "network stack" is to **understand _how_ the components
 - Network layer messages are termed as **packets**.
 - They facilitate the transportation of packets from on end system to another and help to determine the best routes that messages should take from one end system to another.
 - **Routing protocols** are applications that run on the network layer and exchange messages with each other to develop information that helps them route transport layer messages.
-- **Load balancing**: There are many links (copper wire, optical fiber, wireless) in a given network and one objective of 
-the network layer is to keep them all roughly equally utilized. Otherwise, if some links are under-utilized, there will be concerns about the economic sense of deploying and managing them.
+- **Load balancing**: There are many links (copper wire, optical fiber, wireless) in a given network and one objective of the network layer is to keep them all roughly equally utilized. Otherwise, if some links are under-utilized, there will be concerns about the economic sense of deploying and managing them.
 
 #### Data Link Layer
 
