@@ -27,7 +27,6 @@ Current Learning Path: [DevOps for Developers](learning_path/devops.md)
 - [Github Workflow](#github-workflow)
 - [Amazon Web Services (AWS)](#amazon-web-services-aws)
 - [Google Cloud](#google-cloud)
-- [Web HTTP](#web-http)
 
 ---
 
@@ -48,6 +47,8 @@ Current Learning Path: [DevOps for Developers](learning_path/devops.md)
 ### Network Fundamentals
 
 - [Internet and the OSI Model](network_fundamentals/internet.md)
+- [Application Layer](network_fundamentals/application-layer.md)
+- [Cross-Origin Resource Sharing (CORS)](network_fundamentals/cors.md) [![label: read][~read]][read]
 
 ### Docker
 
@@ -108,10 +109,6 @@ Current Learning Path: [DevOps for Developers](learning_path/devops.md)
 
 - [Speech-to-Text API](google_cloud/speech-to-text.md) [![label: read][~read]][read]
 - [Cloud Storage](google_cloud/cloud-storage.md) [![label: read][~read]][read]
-
-### Web HTTP
-
-- [Cross-Origin Resource Sharing (CORS)](web_http/cors.md) [![label: read][~read]][read]
 
 ---
 
