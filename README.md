@@ -48,6 +48,7 @@ Current Learning Path: [DevOps for Developers](learning_path/devops.md)
 
 - [Internet and the OSI Model](network_fundamentals/internet.md)
 - [Application Layer](network_fundamentals/application-layer.md)
+- [Trasnport Layer](network_fundamentals/transport-layer.md)
 - [Cross-Origin Resource Sharing (CORS)](network_fundamentals/cors.md) [![label: read][~read]][read]
 
 ### Docker
