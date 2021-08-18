@@ -25,7 +25,6 @@ The following are the summary of the things that I learned in a daily basis whet
 - [Github Workflow](#github-workflow)
 - [Amazon Web Services (AWS)](#amazon-web-services-aws)
 - [Google Cloud](#google-cloud)
-- [Web HTTP](#web-http)
 
 ---
 
@@ -46,6 +45,8 @@ The following are the summary of the things that I learned in a daily basis whet
 ### Network Fundamentals
 
 - [Internet and the OSI Model](network_fundamentals/internet.md)
+- [Application Layer](network_fundamentals/application-layer.md)
+- [Cross-Origin Resource Sharing (CORS)](network_fundamentals/cors.md) [![label: read][~read]][read]
 
 ### Docker
 
@@ -106,10 +107,6 @@ The following are the summary of the things that I learned in a daily basis whet
 
 - [Speech-to-Text API](google_cloud/speech-to-text.md) [![label: read][~read]][read]
 - [Cloud Storage](google_cloud/cloud-storage.md) [![label: read][~read]][read]
-
-### Web HTTP
-
-- [Cross-Origin Resource Sharing (CORS)](web_http/cors.md) [![label: read][~read]][read]
 
 [~read]: https://img.shields.io/github/labels/chestercolita/til/read
 [read]: https://github.com/chestercolita/til/labels/read

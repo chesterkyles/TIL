@@ -4,7 +4,7 @@ An HTTP response is made by a server to a client. The aim of the response is to 
 
 ## Creating Responses
 
-#### Strings and Arrays
+### Strings and Arrays
 
 All routes and controllers should return a response to be sent back to the user's browser.
 
@@ -20,18 +20,18 @@ Route::get('/', function () {
 });
 ```
 
-#### Response Objects
+### Response Objects
 
 Routes and/or controllers return full `Illuminate\Http\Response` instances or views instead of strings and/or arrays. A `Response` instance inherits from the `Symfony\Component\HttpFoundation\Response` class, which provides a variety of methods for building HTTP responses:
 
 ```php
 Route::get('/home', function () {
     return response('Hello World', 200)
-                  ->header('Content-Type', 'text/plain');
+            ->header('Content-Type', 'text/plain');
 });
 ```
 
-#### Eloquent Model and Collections
+### Eloquent Model and Collections
 
 Route and/or controllers directly return Eloquent ORM models and collections. Laravel will automatically convert the models and collections to JSON responses while respecting the model's hidden attributes:
 
