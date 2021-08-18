@@ -20,6 +20,7 @@ rmdir <dir>       # remove a directory
 clear             # clears the terminal
 history           # prints a list of all past commands
 nano <file>       # open file or create file if not exist
+lsof              # list open files
 ```
 
 ### Nano Commands

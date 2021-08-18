@@ -1,6 +1,6 @@
 # TIL
 
-TIL: Today I Learned
+## TIL: Today I Learned
 
 The following are the summary of the things that I learned in a daily basis whether by reading books, articles or by trying to implement state-of-the-art technologies. Note that what I have written are just concise explanations on various technologies that I am trying to learn. Also, some of them are mere summarized version of the official documentation since the documentation is better in explaining things than me :relaxed:. The things that I listed below are based on the learnings I had while doings tasks and/or knowledge acquired from implementing/coding whenever something catches my interest.
 
@@ -50,7 +50,7 @@ The following are the summary of the things that I learned in a daily basis whet
 
 ### Docker
 
-- [Dockerfile Commands](docker/dockerfile-commands.md)
+- [Dockerfile](docker/dockerfile-entries.md) [![label: update][~update]][update]
 - [Networking in Compose](docker/networking-in-compose.md)
 - [Dockerizing nodeJS application](docker/dockerizing-nodejs.md) [![label: summary][~summary]][summary]
 
@@ -107,6 +107,30 @@ The following are the summary of the things that I learned in a daily basis whet
 
 - [Speech-to-Text API](google_cloud/speech-to-text.md) [![label: read][~read]][read]
 - [Cloud Storage](google_cloud/cloud-storage.md) [![label: read][~read]][read]
+
+---
+
+## Note
+
+This repository is used for solely personal purposes. Everything written here are not used nor distributed for commercial purposes. Mostly written here are mere summaries of official documentations.
+
+## References
+
+- Laravel - <https://laravel.com/docs/8.x>
+- Docker Reference - <https://docs.docker.com/reference/>
+- Docker Product Manuals - <https://docs.docker.com/desktop/>
+- Firebase Admin SDK for PHP - <https://firebase-php.readthedocs.io/en/5.x/>
+
+## Supplementary
+
+Personal Repositories:
+
+- <https://github.com/chestercolita/punctuator_nodejs>
+- <https://github.com/chestercolita/messaging-test-app>
+
+Learning Links:
+
+- <https://educative.io/signup?referralCode=chester-39ypR5yAKrr>
 
 [~read]: https://img.shields.io/github/labels/chestercolita/til/read
 [read]: https://github.com/chestercolita/til/labels/read
