@@ -16,6 +16,7 @@ The following are the summary of the things that I learned in a daily basis whet
 
 ### Categories
 
+- [Network Fundamentals](#network-fundamentals)
 - [Docker](#docker)
 - [Firebase](#firebase)
 - [Laravel](#laravel)
@@ -41,6 +42,10 @@ The following are the summary of the things that I learned in a daily basis whet
 ```
 
 ---
+
+### Network Fundamentals
+
+- [Internet and the OSI Model](network_fundamentals/internet.md)
 
 ### Docker
 
