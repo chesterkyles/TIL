@@ -21,6 +21,7 @@ clear             # clears the terminal
 history           # prints a list of all past commands
 nano <file>       # open file or create file if not exist
 lsof              # list open files
+host              # DNS lookup utility
 ```
 
 ### Nano Commands
@@ -32,6 +33,24 @@ Ctrl-X            # Close file
 ```
 
 ## Additional Info
+
+### Find Authorative Name Server
+
+```sh
+host -t ns google.com
+```
+
+- `host` - invokes the host command
+- `-t` - type flag. It is used to specify the type of command.
+  - Link: <https://linux.die.net/man/1/host>
+- `ns` - specifies the type. It stands for the name server in this case
+- `hostname.com` - can be any website
+
+### Check Local DNS Server
+
+```sh
+cat /etc/resolv.conf
+```
 
 ### Output to File (removed Unix colors)
 

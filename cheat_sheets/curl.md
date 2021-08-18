@@ -1,5 +1,9 @@
 # cURL commands
 
+cURL is a command-line tool that transfers data to or from a server. The transfer can be based on a vast set of protocols. cURL stands for "Client URL".
+
+Link: <https://curl.se/docs/manpage.html>
+
 ## Basic Syntax
 
 ```sh
@@ -34,4 +38,5 @@ curl --request POST [URL] --header "Content-Type: application/json" --data '{"us
 ```sh
  - v , --verbose # Verbose option.
  - s , --silent # Disable progress meter
+ - I , --head # Send an HTTP request with the `head` method
 ```
