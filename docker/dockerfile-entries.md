@@ -288,3 +288,11 @@ ADD --chown=bin files* /somedir/
 ADD --chown=1 files* /somedir/
 ADD --chown=10:11 files* /somedir/
 ```
+
+### Notes
+
+If the container root filesystem does not contain either `/etc/passwd` or `/etc/group` files and either user or group names are used in the `--chown` flag, the build will fail on the `ADD` operation. Using numeric IDs requires no lookup and will not depend on container root filesystem content.
+
+If your URL files are protected using authentication, you need to use `RUN wget`, `RUN curl` or use another tool from within the container as the `ADD` instruction does not support authentication.
+
+You may want to read more about Dockerfile and instructions in the official documentation: <https://docs.docker.com/engine/reference/builder/>
