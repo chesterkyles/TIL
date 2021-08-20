@@ -115,3 +115,28 @@ Unfortunately, retransmission timers alone are not sufficient to recover from se
 ### Sequence Numbers
 
 To identify duplicates, transport protocols associate an identification number with each segment called the **sequence number**. This sequence number is prepended to the segments and sent. This way, the end entity can identify duplicates.
+
+## UDP (User Datagram Protocol)
+
+UDP is a transport layer protocol that works over the network layer's famous Internet Protocol. [RFC 768](https://tools.ietf.org/pdf/rfc768.pdf) is the official RFC for UDP.
+
+UDP does not involve any initial handshaking like TCP does, and is hence called a **connectionless** protocol. This means that there are no established ‘connections’ between hosts. UDP prepends the **source and destination ports** to messages from the application layer and hands them off to the network layer. The Internet Protocol of the network layer is a **best-effort** attempt to deliver the message. This means that the message:
+
+1. May or may not get delivered
+2. May get delivered with changes in it
+3. May get delivered out of order
+
+### Structure
+
+#### Header
+
+UDP prepends **four** 2-byte header fields to the data it receives from the application layer. So in total, a UDP header is **8 bytes** long. The fields are:
+
+1. Source port number
+2. Destination port number
+3. Length of the datagram (header and data in bytes)
+4. Checksum to detect if errors have been introduced into the message
+
+#### Data
+
+Other than the headers, a UDP datagram contains a body of data which can be up to 65,528 bytes long. The nature of the data depends on the overlying application. So if the application is querying a DNS server, it would contain bytes of a zone file.
