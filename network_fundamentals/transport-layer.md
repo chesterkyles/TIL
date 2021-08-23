@@ -185,7 +185,7 @@ Note that `.pcap` files are used to store the packet data of a network. Packet a
 tcpdump -w output.pcap -c 10
 ```
 
-Sample output can be found here: <network_fundamentals/output.pcap>
+Sample output can be found here: [ouptut.pcap](resources/output.pcap)
 
 ### Printing PCAP Files
 
