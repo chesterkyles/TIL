@@ -259,7 +259,7 @@ The header has a 4-bit field that is reserved and is always set to 00. This fiel
 | CWR | ECN | URG | ACK | PSH | RST | SYN | FIN |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 
-There are eight flags used in TCP headers: `CWR`, `ECN`, `URG`, `ACK`, `PSH`, `RST`, `SYN`, and `FIN`. `ACK`, `RST`, `SYN`, and `FIN` are used in the establishment, maintenance, and tear-down of a TCP connection.
+There are eight flags used in TCP headers as shown above. `ACK`, `RST`, `SYN`, and `FIN` are used in the establishment, maintenance, and tear-down of a TCP connection.
 
 - `ACK` : This flag is set to `1` in a segment to **acknowledge** a segment that was received previously. This is an important part of the protocol. In other words, when a receiver wants to acknowledge some received data, it sends a TCP segment with the ACK flag and the acknowledgment number field appropriately set. This flag is also used in connection establishment and termination.
 - `RST` : The **reset** flag immediately terminates a connection. This is sent due to the result of some confusion, such as if the host doesn’t recognize the connection, if the host has crashed, or if the host refuses an attempt to open a connection.
