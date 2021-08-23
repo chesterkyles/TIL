@@ -144,7 +144,7 @@ s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 print('The OS assigned the address {} to me'.format(s.getsockname()))
 ```
 
-Note that the goal of this client and server was for the client to send a string to the server that it would capitalize and send back. To get that string, use `input()` method. The user can type a string of their choice and hit enter. 
+Note that the goal of this client and server was for the client to send a string to the server that it would capitalize and send back. To get that string, use `input()` method. The user can type a string of their choice and hit enter.
 
 ```python
 message = input('Input lowercase sentence: ')
@@ -200,7 +200,7 @@ def client(port):
     data = message.encode('ascii')
     s.send(data)
     print('The OS assigned the address {} to me'.format(s.getsockname()))
-    data = s.recv(MAX_SIZE_BYTES) 
+    data = s.recv(MAX_SIZE_BYTES)
     text = data.decode('ascii')
     print('The server replied with {!r}'.format(text))
 ```
