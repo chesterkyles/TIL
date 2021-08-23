@@ -240,10 +240,10 @@ The following link tells you how to view cookies in Chrome: <https://developer.c
 We find things on the internet, generally, using one of the following ways:
 
 - Addresses or locations that specify where something is
-- Names, in particular, domain names, or the uniquer name that identifies a websites which are mapped into IP addressed based on lookup servic that uses a database
+- Names, in particular, domain names, or the unique name that identifies a websites which are mapped into IP addressed based on lookup servic that uses a database
 - Content-based addressing
 
-DNS is a client-server application layer protocol that translates hostnames on the Internet to IP addresses. At the core, the Internet operates on IP address, but these are difficult to remeber for humans, So, DNS names are prefereably used at the application layer for which the DNS provides a mapping to IP addresses.
+DNS is a client-server application layer protocol that translates hostnames on the Internet to IP addresses. At the core, the Internet operates on IP address, but these are difficult to remember for humans. So, DNS names are prefereably used at the application layer for which the DNS provides a mapping to IP addresses.
 
 ### Distributed Hierarchical Database
 
