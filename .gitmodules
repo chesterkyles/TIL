@@ -1,0 +1,3 @@
+[submodule "learning_path/laravel"]
+	path = learning_path/laravel
+	url = https://github.com/LaravelDaily/Laravel-Roadmap-Learning-Path
