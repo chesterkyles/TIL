@@ -51,6 +51,8 @@ Current Learning Path: [DevOps for Developers](learning_path/devops.md)
 - [Trasnport Layer](network_fundamentals/transport-layer.md)
 - [Socket Programming with Python](network_fundamentals/socket-programming.md)
 - [Network Layer](network_fundamentals/network-layer.md)
+- [Internet Protocol v4](network_fundamentals/ipv4.md)
+- [Data Link Layer](network_fundamentals/data-link-layer.md)
 - [Cross-Origin Resource Sharing (CORS)](network_fundamentals/cors.md) [![label: read][~read]][read]
 
 ### Docker
