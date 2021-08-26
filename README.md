@@ -19,6 +19,7 @@ Current Learning Path: [DevOps for Developers](learning_path/devops.md)
 ### Categories
 
 - [Network Fundamentals](#network-fundamentals)
+- [Git](#git)
 - [Docker](#docker)
 - [Firebase](#firebase)
 - [Laravel](#laravel)
@@ -54,6 +55,17 @@ Current Learning Path: [DevOps for Developers](learning_path/devops.md)
 - [Internet Protocol v4](network_fundamentals/ipv4.md)
 - [Data Link Layer](network_fundamentals/data-link-layer.md)
 - [Cross-Origin Resource Sharing (CORS)](network_fundamentals/cors.md) [![label: read][~read]][read]
+
+### Git
+
+- [Introduction to Git](git/introduction.md)
+- [Merging vs Rebasing](git/merging-vs-rebasing.md) [![label: summary][~summary]][summary]
+- [Resetting, Checking Out, and Reverting](git/reset-checkout-revert.md) [![label: summary][~summary]][summary]
+- [Git Hooks](git/git-hooks.md) [![label: summary][~summary]][summary]
+- [Refs and the Reflog](git/ref-reflog.md) [![label: read][~read]][read]
+- [Git submodules and Git subtree](git/submodules-subtree.md) [![label: read][~read]][read]
+- [Git LFS (large file storage)](git/large-file-storage.md) [![label: read][~read]][read]
+- [Git cherry-pick](git/cherry-pick.md) [![label: summary][~summary]][summary]
 
 ### Docker
 

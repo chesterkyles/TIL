@@ -24,12 +24,38 @@ lsof              # list open files
 host              # DNS lookup utility
 ```
 
-### Nano Commands
+## Nano Commands
 
 ```sh
 Ctrl-R            # Read file
 Ctrl-O            # Save file
 Ctrl-X            # Close file
+```
+
+## Text Manipulation
+
+### [`grep`](https://man7.org/linux/man-pages/man1/grep.1.html) command
+
+`grep` command searches for patterns in each file.
+
+```sh
+grep [OPTION...] PATTERNS [FILE...]
+```
+
+### [`sed`](https://www.gnu.org/software/sed/manual/sed.html) command
+
+`sed` is a stream editor. A stream editor is used to perform basic text transformations on an input stream (a file or input from a pipeline).
+
+```sh
+sed SCRIPT INPUTFILE...
+```
+
+### [`cat`](https://linuxize.com/post/linux-cat-command/) command
+
+`cat` command either concatenates or displays files.
+
+```sh
+cat [OPTIONS] [FILE_NAMES]
 ```
 
 ## Additional Info
