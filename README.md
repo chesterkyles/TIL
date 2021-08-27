@@ -1,6 +1,6 @@
 # TIL
 
-![markdownlint](https://github.com/chestercolita/til/actions/workflows/markdownlint.yml/badge.svg)
+[![markdownlint](https://github.com/chestercolita/til/actions/workflows/markdownlint.yml/badge.svg)](https://github.com/chestercolita/til/actions/workflows/markdownlint.yml)
 
 ## TIL: Today I Learned
 
@@ -101,7 +101,7 @@ Current Learning Path: [DevOps for Developers](learning_path/devops.md)
 - [HTTP Requests](laravel/http-request.md)
 - [File Storage using Laravel's filesystem](laravel/file-storage.md)
 - [Mocking Objects for Testing](laravel/mocking.md)
-- [Add breadcrumbs using Tabuna/Breadcrumbs package](laravel/tabuna-breadcrumbs.md) ![label: summary][~summary]
+- [Add breadcrumbs using Tabuna/Breadcrumbs package](laravel/tabuna-breadcrumbs.md) [![label: summary][~summary]][summary]
 
 ### Node.js
 
