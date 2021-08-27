@@ -26,7 +26,6 @@ current = rev-parse --abbrev-ref HEAD
 plo = pull origin
 pld = pull origin develop
 plm = pull origin main
-plb = pull origin feature/upgrade_bootstrap4_install
 plc = !CURRENT=$(git current) && git pull origin $CURRENT
 psc = !CURRENT=$(git current) && git push origin $CURRENT
 pso = push origin
@@ -86,6 +85,7 @@ grep -A 'remote "origin"' .git/config
 ## Recover repository state
 
 ```sh
+# restore state
 git reset
 
 # default flag (staged to unstaged)
@@ -133,6 +133,54 @@ git stash drop <ID>
 #git stash drop stash@{1}
 ```
 
+## Add Interactive
+
+```sh
+# command for add interactive
+git add -i
+
+*** Commands ***
+  1: status   2: update   3: revert   4: add untracked
+  5: patch    6: diff     7: quit     8: help
+
+# Choose patch command
+What now> p
+           staged     unstaged path
+  1:    unchanged     +1/-1 git/README.md
+
+Patch update>>1
+           staged     unstaged path
+* 1:    unchanged     +1/-1 git/README.md
+
+Patch update>>
+diff --git a/git/README.md b/git/README.md
+index 930360b..7ee3668 100644
+--- a/git/README.md
++++ b/git/README.md
+@@ -13,4 +13,4 @@
+-- [Git cherry-pick](cherry-pick.md)
++- [Git cherry-pick](cherry-pick.md) [![label: summary][~summary]][summary]
+(1/1) Stage this hunk [y,n,q,a,d,/,s,e,?]?
+```
+
+Meaning of each options:
+
+```txt
+y - stage this hunk
+n - do not stage this hunk
+q - quit; do not stage this hunk or any of the remaining ones
+a - stage this hunk and all later hunks in the file
+d - do not stage this hunk or any of the later hunks in the file
+g - select a hunk to go to
+/ - search for a hunk matching the given regex
+j - leave this hunk undecided, see next undecided hunk
+J - leave this hunk undecided, see next hunk
+e - manually edit the current hunk
+? - print help
+```
+
+**Splitting hunks** are useful to avoid committing lines you might want to keep for local development but not persist in the repository history. A typical example of this is printed debug lines that you don’t want to get to production but want to keep for local development. Another example might be chunks of notes that only make sense to you while you are developing.
+
 ## Notes
 
 - A `branch` is a pointer to the end of a line of changes.
@@ -140,3 +188,6 @@ git stash drop <ID>
 - `HEAD` is where your Git repository is right now.
 - `Detached HEAD` means you are at a commit that has no reference (branch or tag) associated with it.
 - `git stash apply` remains in the list but `git stash pop` will remove the stash item
+- A `hunk` is a contiguous section of a `diff`.
+- `reflog` is short for **ref**erence **log**. It _records all movements_ of branches in the repository.
+

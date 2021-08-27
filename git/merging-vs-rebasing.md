@@ -1,6 +1,6 @@
 # Merging vs Rebasing
 
-The `git rebase` command has a reputation for being magical Git voodoo that beginners should stay away from, but it can actually make life much easier for a development team when used with care. In this article, we’ll compare `git rebase` with the related `git merge` command and identify all of the potential opportunities to incorporate rebasing into the typical Git workflow.
+The `git rebase` command has a reputation for being magical Git voodoo that beginners should stay away from, but it can actually make life much easier for a development team when used with care. Comparison of `git rebase` with the related `git merge` command is explained below.
 
 ## Conceptual Overview
 
