@@ -59,13 +59,14 @@ Current Learning Path: [DevOps for Developers](learning_path/devops.md)
 ### Git
 
 - [Introduction to Git](git/introduction.md)
-- [Merging vs Rebasing](git/merging-vs-rebasing.md) [![label: summary][~summary]][summary]
+- [Merging vs Rebasing](git/merging-vs-rebasing.md)
 - [Resetting, Checking Out, and Reverting](git/reset-checkout-revert.md) [![label: summary][~summary]][summary]
+- [Git cherry-pick](git/cherry-pick.md) [![label: summary][~summary]][summary]
+- [Advanced Git log](git/advanced-log.md) [![label: summary][~summary]][summary]
 - [Git Hooks](git/git-hooks.md) [![label: summary][~summary]][summary]
 - [Refs and the Reflog](git/ref-reflog.md) [![label: read][~read]][read]
 - [Git submodules and Git subtree](git/submodules-subtree.md) [![label: read][~read]][read]
 - [Git LFS (large file storage)](git/large-file-storage.md) [![label: read][~read]][read]
-- [Git cherry-pick](git/cherry-pick.md) [![label: summary][~summary]][summary]
 
 ### Docker
 
@@ -136,6 +137,7 @@ This repository is used for solely personal purposes. Everything written here ar
 ## References
 
 - Laravel - <https://laravel.com/docs/8.x>
+- Advanced Git Tutorials - <https://www.atlassian.com/git/tutorials/advanced-overview>
 - Docker Reference - <https://docs.docker.com/reference/>
 - Docker Product Manuals - <https://docs.docker.com/desktop/>
 - Firebase Admin SDK for PHP - <https://firebase-php.readthedocs.io/en/5.x/>
