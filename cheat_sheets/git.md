@@ -35,10 +35,41 @@ brd = !sh -c 'git branch -l $1/* | xargs git branch -D' -
 brdall = !sh -c 'git branch -l | xargs git branch -D' -
 ```
 
+## Clone local repository
+
+```sh
+:home$ git clone git_origin this_cloned
+Cloning into 'this_cloned' ...
+done.
+
+:home$ cd this_cloned
+:home/this_clone$ git remote -v
+origin  /home/git_origin (fetch)
+origin  /home/git_origin (push)
+```
+
+To add other repository as a remote:
+
+```sh
+git remote add <remote_name> <other_repo>
+```
+
 ## Get current branch
 
 ```sh
 git rev-parse --abbrev-ref HEAD
+```
+
+## Get oldest commit
+
+```sh
+git rev-list --max-parents=0 HEAD
+```
+
+Rebasing using the oldest commit:
+
+```sh
+git rebase -i $(git rev-list --max-parents=0 HEAD) HEAD
 ```
 
 ## Get all local branches with prefix
@@ -133,6 +164,66 @@ git stash drop <ID>
 #git stash drop stash@{1}
 ```
 
+## Applying remote changes to local using fetch and merge
+
+```sh
+# get changes on thre remote "master" branch
+git fetch origin master
+
+# applying remote changes to local
+git merge origin/master
+```
+
+You can see this repository's view of all branches by:
+
+```sh
+$ git branch --all
+* master
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/master
+```
+
+## Check tracking remote branch of local branch
+
+```sh
+$ git branch -vv
+* main                          fcc92c7 [origin/main] Fix badge
+  summary/Add                   6d9cefd [origin/summary/Add] Add badge
+  summary/dockerfile            aa2080d Done dockerfile
+  summary/internet              028b27e Fix lint
+```
+
+Note that `summary/internet` branch is not tracking any remote branch. So when pushing using `git push`, error will be encountered:
+
+```sh
+git push
+
+fatal: The current branch summary/internet has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin summary/internet
+```
+
+Solution for above error is:
+
+```sh
+# set upstream or remote branch for the local branch
+git push --set-upstream origin summary/internet
+
+# or
+git push -u origin summary/internet
+```
+
+## Difference of `~`(tilde) and `^`(caret)
+
+The `~`(tilde) and `^`(caret) symbols are used to point to a position relative to a specific commit. The symbols are used together with a commit reference, typically HEAD or a commit hash.
+
+- `~`n refers to the nth grandparent. HEAD~1 refers to the commit's first parent. HEAD~2 refers to the first parent of the commit's first parent.
+
+- `^`n refers to the the nth parent. HEAD^1 refers to the commit's first parent. HEAD^2 refers to the commit's second parent. A commit can have two parents in a merge commit.
+
+<p align="center"><img src="../git/resources/switch_branches_001.png" width="380px"></p>
+
 ## Add Interactive
 
 ```sh
@@ -190,4 +281,4 @@ e - manually edit the current hunk
 - `git stash apply` remains in the list but `git stash pop` will remove the stash item
 - A `hunk` is a contiguous section of a `diff`.
 - `reflog` is short for **ref**erence **log**. It _records all movements_ of branches in the repository.
-
+- After rebasing using `git rebase`, you always end up in a `detached HEAD` state.

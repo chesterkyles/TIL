@@ -11,8 +11,8 @@
 
 ## Path Contents
 
-- Network Fundamentals
-- Git and Github
+- Network Fundamentals :heavy_check_mark:
+- Git and Github :heavy_check_mark:
 - Docker for Developers
 - Docker Compose for Developers
 - A Practical Guide to Kubernetes

@@ -78,8 +78,57 @@ host -t ns google.com
 cat /etc/resolv.conf
 ```
 
-### Output to File (removed Unix colors)
+### I/O Redirection
+
+```sh
+# redirect output to another place
+cat foo.txt > output.txt
+```
+
+File description is nothing more than a positive integer that represents an open file:
+
+- `1` for `stdout`
+- `2` for `stderr`
+
+```sh
+# redirect output (explicitly) to another place
+cat foo.txt 1> output.txt
+
+# redirect error to another place
+cat nop.txt 2> error.txt
+```
+
+Note that `&1` is use to refer the value of file description `1` (`stdout`). So, `2>&1` means "redirect `stderr` to the same place when redirecting the `stdout`. So the above can also be written as:
+
+```sh
+cat foo.txt > output.txt 2>&1
+```
+
+Note also that `>` means **overwrite** and `>>` means **appends**.
+
+#### Output to File (removed Unix colors)
 
 ```sh
 <some command here> | sed "s/\x1b\[[0-9;]*m//g" > output.txt
+```
+
+#### The `<<` (here-document) operator
+
+A command with `<<` operator will do the following:
+
+- Launch the program specified in the left of the operator
+- Grap user input, including newlines, until what is specified on the right of the operator is met on one line, `EOF` for instance
+- Send all that have been read except the `EOF` value to the standard input of the program on the left
+
+For example:
+
+```sh
+$ cat > test.sh << EOF
+> Hello
+> World
+> EOF
+
+$ cat test.sh
+Hello
+World
 ```

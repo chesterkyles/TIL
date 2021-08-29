@@ -150,6 +150,7 @@ Personal Repositories:
 
 - <https://github.com/chestercolita/punctuator_nodejs>
 - <https://github.com/chestercolita/messaging-test-app>
+- Gist: https://gist.github.com/chestercolita
 
 Learning Links:
 
