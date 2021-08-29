@@ -3,4 +3,4 @@
 	url = https://github.com/LaravelDaily/Laravel-Roadmap-Learning-Path
 [submodule "docker/dockerbookfiles"]
 	path = docker/dockerbookfiles
-	url = https://bitbucket.org/epobb/dockerbookfiles.git
+	url = https://bitbucket.org/epobb/dockerbookfiles/src/master
