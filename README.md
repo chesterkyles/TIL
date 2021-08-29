@@ -62,10 +62,10 @@ Current Learning Path: [DevOps for Developers](learning_path/devops.md)
 
 - [Introduction to Git](git/introduction.md)
 - [Merging vs Rebasing](git/merging-vs-rebasing.md)
-- [Resetting, Checking Out, and Reverting](git/reset-checkout-revert.md) [![label: summary][~summary]][summary]
-- [Git cherry-pick](git/cherry-pick.md) [![label: summary][~summary]][summary]
-- [Advanced Git log](git/advanced-log.md) [![label: summary][~summary]][summary]
-- [Git Hooks](git/git-hooks.md) [![label: summary][~summary]][summary]
+- [Resetting, Checking Out, and Reverting](git/reset-checkout-revert.md)
+- [Git cherry-pick](git/cherry-pick.md)
+- [Advanced Git log](git/advanced-log.md)
+- [Git Hooks](git/git-hooks.md)
 - [Refs and the Reflog](git/ref-reflog.md) [![label: read][~read]][read]
 - [Git submodules and Git subtree](git/submodules-subtree.md) [![label: read][~read]][read]
 - [Git LFS (large file storage)](git/large-file-storage.md) [![label: read][~read]][read]
