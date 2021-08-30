@@ -35,6 +35,14 @@ brd = !sh -c 'git branch -l $1/* | xargs git branch -D' -
 brdall = !sh -c 'git branch -l | xargs git branch -D' -
 ```
 
+### Aliasing `git` in `.bashrc`
+
+```sh
+# Main git completions (prior to git 2.30, you an use _git instead of __git_main)
+alias g="git"
+__git_complete g __git_main
+```
+
 ## Clone local repository
 
 ```sh
