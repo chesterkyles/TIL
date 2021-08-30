@@ -172,12 +172,12 @@ if branch.startswith('issue-'):
 First, the above `prepare-commit-msg` hook shows you how to collect all of the parameters that are passed to the script. Then, it calls `git symbolic-ref --short HEAD` to get the branch name that corresponds to `HEAD`. If this branch name starts with `issue-`, it re-writes the commit message file contents to include the issue number in the first line. So, if your branch name is `issue-224`, this will generate the following commit message.
 
 ```txt
-ISSUE-224 
+ISSUE-224
 
-# Please enter the commit message for your changes. Lines starting 
-# with '#' will be ignored, and an empty message aborts the commit. 
-# On branch issue-224 
-# Changes to be committed: 
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch issue-224
+# Changes to be committed:
 #   modified:   test.txt
 ```
 

@@ -9,9 +9,9 @@ Git is all about commits: you stage commits, create commits, view old commits, a
 The most direct way to reference a commit is via its SHA-1 hash. This acts as the unique ID for each commit. You can find the hash of all your commits in the `git log` output.
 
 ```sh
-commit 0c708fdec272bc4446c6cabea4f0022c2b616eba 
-Author: Mary Johnson  
-Date: Wed Jul 9 16:37:42 2014 -0500 
+commit 0c708fdec272bc4446c6cabea4f0022c2b616eba
+Author: Mary Johnson
+Date: Wed Jul 9 16:37:42 2014 -0500
 Some commit message
 ```
 
@@ -42,10 +42,10 @@ Refs are stored as normal text files in the `.git/refs` directory, where `.git` 
 The `heads` directory defines all of the local branches in your repository. Each filename matches the name of the corresponding branch, and inside the file you’ll find a commit hash. This commit hash is the location of the tip of the branch. To verify this, try running the following two commands from the root of the Git repository:
 
 ```sh
-# Output the contents of `refs/heads/main` file: 
+# Output the contents of `refs/heads/main` file:
 cat .git/refs/heads/main
 
-# Inspect the commit at the tip of the `main` branch: 
+# Inspect the commit at the tip of the `main` branch:
 git log -1 main
 ```
 
@@ -192,13 +192,13 @@ To clarify how `~` and `^` work, the following figure shows you how to reach any
 Relative refs can be used with the same commands that a normal ref can be used. For example, all of the following commands use a relative reference:
 
 ```sh
-# Only list commits that are parent of the second parent of a merge commit 
-git log HEAD^2 
+# Only list commits that are parent of the second parent of a merge commit
+git log HEAD^2
 
-# Remove the last 3 commits from the current branch 
-git reset HEAD~3 
+# Remove the last 3 commits from the current branch
+git reset HEAD~3
 
-# Interactively rebase the last 3 commits on the current branch 
+# Interactively rebase the last 3 commits on the current branch
 git rebase -i HEAD~3
 ```
 
