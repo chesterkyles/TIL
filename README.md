@@ -68,7 +68,7 @@ Current Learning Path: [DevOps for Developers](learning_path/devops.md)
 - [Git Hooks](git/git-hooks.md)
 - [Refs and the Reflog](git/ref-reflog.md)
 - [Git submodules and Git subtree](git/submodules-subtree.md)
-- [Git LFS (large file storage)](git/large-file-storage.md)
+- [Git LFS (large file storage)](git/large-file-storage.md) [![label: read][~read]][read]
 
 ### Docker
 
