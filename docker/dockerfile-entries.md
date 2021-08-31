@@ -295,4 +295,133 @@ If the container root filesystem does not contain either `/etc/passwd` or `/etc/
 
 If your URL files are protected using authentication, you need to use `RUN wget`, `RUN curl` or use another tool from within the container as the `ADD` instruction does not support authentication.
 
+## COPY
+
+This instruction has two forms:
+
+```dockerfile
+COPY [--chown=<user>:<group>] <src>... <dest>
+COPY [--chown=<user>:<group>] ["<src>",... "<dest>"]
+```
+
+> The `--chown` feature is only supported on Dockerfiles used to build Linux containers, and will not work on Windows containers. Since user and group ownership concepts do not translate between Linux and Windows, the use of `/etc/passwd` and `/etc/group` for translating user and group names to IDs restricts this feature to only be viable for Linux OS-based containers.
+
+It is somewhat the same as `ADD` instruction. You may read more about `COPY` instruction [here](https://docs.docker.com/engine/reference/builder/#copy).
+
+## ENTRYPOINT
+
+This instruction has two forms:
+
+```dockerfile
+# exec form
+ENTRYPOINT ["executable", "param1", "param2"]
+
+# shell form
+ENTRYPOINT command param1 param2
+```
+
+An `ENTRYPOINT` allows you to configure a container that will run as an executable.
+
+For example, the following starts nginx with its default content, listening on port 80:
+
+```sh
+docker run -i -t --rm -p 80:80 nginx
+```
+
+Command line arguments to `docker run <image>` will be appended after all elements in an _exec_ form `ENTRYPOINT`, and will override all elements specified using `CMD`. This allows arguments to be passed to the entry point, i.e., `docker run <image> -d` will pass the `-d` argument to the entry point. You can override the `ENTRYPOINT` instruction using the docker run `--entrypoint` flag.
+
+The _shell_ form prevents any `CMD` or `run` command line arguments from being used, but has the disadvantage that your `ENTRYPOINT` will be started as a subcommand of `/bin/sh -c`, which does not pass signals. This means that the executable will not be the container’s `PID 1` - and will not receive Unix signals - so your executable will not receive a `SIGTERM` from `docker stop <container>`.
+
+Only the last `ENTRYPOINT` instruction in the `Dockerfile` will have an effect.
+
+### Exec form ENTRYPOINT example
+
+You can use the exec form of `ENTRYPOINT` to set fairly stable default commands and arguments and then use either form of CMD to set additional defaults that are more likely to be changed.
+
+```dockerfile
+FROM ubuntu
+ENTRYPOINT ["top", "-b"]
+CMD ["-c"]
+```
+
+When you run the container, you can see that `top` is the only process:
+
+```sh
+$ docker run -it --rm --name test top -H
+
+top - 08:25:00 up   7:27,   0 users,  load average: 0.00, 0.01, 0.05
+Threads:   1 total,    1 running,    0 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.1 us,  0.1 sy,   0.0 ni,  99.7 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+KiB Mem:   2056668 total,   1616832 used,    439836 free,    99352 buffers
+KiB Swap:  1441840 total,         0 used,   1441840 free.  1324440 cached Mem
+
+  PID USER      PR  NI    VIRT     RES     SHR S %CPU %MEM     TIME+ COMMAND
+    1 root      20  0    19744    2336    2080 R  0.0  0.1   0:00.04 top
+```
+
+To examine the result further, you can use `docker exec`:
+
+```sh
+$ docker exec -it test ps aux
+
+USER     PID %CPU %MEM    VSZ   RSS TTY     STAT START   TIME COMMAND
+root       1  2.6  0.1  19752  2352 ?       Ss+  08:24   0:00 top -b -H
+root       7  0.0  0.1  15572  2164 ?       R+   08:25   0:00 ps aux
+```
+
+Read more examples here:
+
+- <https://docs.docker.com/engine/reference/builder/#exec-form-entrypoint-example>
+- <https://docs.docker.com/engine/reference/builder/#shell-form-entrypoint-example>
+
+### Understand how CMD and ENTRYPOINT interact
+
+Both `CMD` and `ENTRYPOINT` instructions define what command gets executed when running a container. There are few rules that describe their co-operation.
+
+1. Dockerfile should specify at least one of `CMD` or `ENTRYPOINT` commands.
+2. `ENTRYPOINT` should be defined when using the container as an executable.
+3. `CMD` should be used as a way of defining default arguments for an `ENTRYPOINT` command or for executing an ad-hoc command in a container.
+4. `CMD` will be overridden when running the container with alternative arguments.
+
+The table below shows what command is executed for different `ENTRYPOINT` / `CMD` combinations:
+
+-| No `ENTRYPOINT` | `ENTYRPOINT exec_entry p1_entry` | `ENTRYPOINT ["exec_entry", "p1_entry"]`
+-| --------------- | -------------------------------- | --------------------------------------
+No `CMD` | _error, not allowed_ | `/bin/sh -c exec_entry p1_entry` | `exec_entry p1_entry`
+`CMD ["exec_cmd", "p1_cmd"]` | `exec_cmd p1_cmd` | `/bin/sh -c exec_entry p1_entry` | `exec_entry p1_entry exec_cmd p1_cmd`
+`CMD ["p1_cmd", "p2_cmd"]` | `p1_cmd p2_cmd` | `/bin/sh -c exec_entry p1_entry` | `exec_entry p1_entry p1_cmd p2_cmd`
+`CMD exec_cmd p1_cmd` | `/bin/sh -c exec_cmd p1_cmd` | `/bin/sh -c exec_entry p1_entry` | `exec_entry p1_entry /bin/sh -c exec_cmd p1_cmd`
+
+> If `CMD` is defined from the base image, setting `ENTRYPOINT` will reset `CMD` to an empty value. In this scenario, `CMD` must be defined in the current image to have a value.
+
+## VOLUME
+
+```dockerfile
+VOLUME ["/data"]
+```
+
+The `VOLUME` instruction creates a mount point with the specified name and marks it as holding externally mounted volumes from native host or other containers. The value can be a JSON array, `VOLUME ["/var/log/"]`, or a plain string with multiple arguments, such as `VOLUME /var/log` or `VOLUME /var/log /var/db`. For more information/examples and mounting instructions via the Docker client, refer to [Share Directories via Volumes](https://docs.docker.com/storage/volumes/) documentation.
+
+The `docker run` command initializes the newly created volume with any data that exists at the specified location within the base image. For example, consider the following Dockerfile snippet:
+
+```dockerfile
+FROM ubuntu
+RUN mkdir /myvol
+RUN echo "hello world" > /myvol/greeting
+VOLUME /myvol
+```
+
+This Dockerfile results in an image that causes `docker run` to create a new mount point at `/myvol` and copy the greeting file into the newly created volume.
+
+### Notes about specifying volumes
+
+Keep the following things in mind about volumes in the `Dockerfile`.
+
+- **Volumes on Windows-based containers**: When using Windows-based containers, the destination of a volume inside the container must be one of:
+  - a non-existing or empty directory
+  - a drive other than `C:`
+- **Changing the volume from within the Dockerfile**: If any build steps change the data within the volume after it has been declared, those changes will be discarded.
+- **JSON formatting**: The list is parsed as a JSON array. You must enclose words with double quotes (`"`) rather than single quotes (`'`).
+- **The host directory is declared at container run-time**: The host directory (the mountpoint) is, by its nature, host-dependent. This is to preserve image portability, since a given host directory can’t be guaranteed to be available on all hosts. For this reason, you can’t mount a host directory from within the Dockerfile. The `VOLUME` instruction does not support specifying a `host-dir` parameter. You must specify the mountpoint when you create or run the container.
+
 You may want to read more about Dockerfile and instructions in the official documentation: <https://docs.docker.com/engine/reference/builder/>

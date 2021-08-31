@@ -16,7 +16,9 @@ Current Learning Path: [DevOps for Developers](learning_path/devops.md)
 
 - [Git](cheat_sheets/git.md)
 - [Linux Commands](cheat_sheets/linux.md)
+- [Docker](cheat_sheets/docker.md)
 - [cURL Commands](cheat_sheets/curl.md)
+- [Environment Variables](cheat_sheets/env.md)
 
 ### Categories
 
@@ -73,6 +75,7 @@ Current Learning Path: [DevOps for Developers](learning_path/devops.md)
 ### Docker
 
 - [Introduction: Why Docker](docker/introduction.md)
+- [Docker Notes](docker/docker-notes.md)
 - [Dockerfile](docker/dockerfile-entries.md) [![label: update][~update]][update]
 - [Networking in Compose](docker/networking-in-compose.md)
 - [Dockerizing nodeJS application](docker/dockerizing-nodejs.md) [![label: summary][~summary]][summary]
