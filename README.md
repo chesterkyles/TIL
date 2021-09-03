@@ -17,6 +17,7 @@ Current Learning Path: [DevOps for Developers](learning_path/devops.md)
 - [Git](cheat_sheets/git.md)
 - [Linux Commands](cheat_sheets/linux.md)
 - [Docker](cheat_sheets/docker.md)
+- [Docker-compose](cheat_sheets/docker-compose.md)
 - [cURL Commands](cheat_sheets/curl.md)
 - [Environment Variables](cheat_sheets/env.md)
 
@@ -53,7 +54,7 @@ Current Learning Path: [DevOps for Developers](learning_path/devops.md)
 
 - [Internet and the OSI Model](network_fundamentals/internet.md)
 - [Application Layer](network_fundamentals/application-layer.md)
-- [Trasnport Layer](network_fundamentals/transport-layer.md)
+- [Transport Layer](network_fundamentals/transport-layer.md)
 - [Socket Programming with Python](network_fundamentals/socket-programming.md)
 - [Network Layer](network_fundamentals/network-layer.md)
 - [Internet Protocol v4](network_fundamentals/ipv4.md)
@@ -77,6 +78,7 @@ Current Learning Path: [DevOps for Developers](learning_path/devops.md)
 - [Introduction: Why Docker](docker/introduction.md)
 - [Docker Notes](docker/docker-notes.md)
 - [Dockerfile](docker/dockerfile-entries.md) [![label: update][~update]][update]
+- [Docker-Compose](docker/docker-compose.md)
 - [Networking in Compose](docker/networking-in-compose.md)
 - [Dockerizing nodeJS application](docker/dockerizing-nodejs.md) [![label: summary][~summary]][summary]
 

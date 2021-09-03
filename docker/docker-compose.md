@@ -25,6 +25,8 @@ services:
     # for reachability.
     links:
       - "database:backenddb"
+    depends_on:
+      - database
     
   database:
 
@@ -58,3 +60,56 @@ The Compose file is in YAML format. You can validate YAML file using any of the 
 - **links**: Links literally link one service to another. In the bridge network, we have to specify which container should be accessible to what container using a link to the respective containers. Here, we are linking the database container to the web container, so that our web container can reach the database in the bridge network.
 - **image**: If we don’t have a Dockerfile and want to run a service directly using an already built docker image, then specify the image location using the ‘image’ clause. Compose will pull the image and fork a container from it.
 - **environment**: Any environment variable that should be present in the container can be created using the `environment` clause. This does the same work as the `-e` argument in the `docker run` command while running a container.
+- **depends_on**: This is used to inform docker-compose about all the dependencies of a service. Docker-compose will then start dependencies first and the main service after.
+
+## Multipe Dockerfile use cases
+
+There might be a situation where we need to have multiple Dockerfiles for different services. Examples could be:
+
+- Creating a microservices app
+- Dockerfile for different environments such as development, production
+
+In these cases, you have to tell docker-compose the Dockerfile it should consider for creating that specific service.
+
+> By default, docker-compose looks for a file named Dockerfile. Dockerfiles can have any name. It’s just a file without any extension. We can override the default behaviour using `dockerfile:'custom-name'` directive inside the build section.
+
+## Accessing environment variables
+
+### Using the `.env` file
+
+A file with only the `.env` extension is used in the production systems to store all the variables. Since it is a hidden file, it is not normally pushed to the code.
+
+Create a `.env` file and move the variables to the .env file. To access the variables, use `${}` syntax in docker-compose.
+
+> The `.env` file should be in the same folder where the `docker-compose.yml` file is located.
+
+### Using the `env_file`
+
+Another method is to use the `env_file` keyword instead of the environment keyword in `docker-compose.yml`. In this method, it is not necessary that the `.env` file should be located in the same directory as the docker-compose file.
+
+You will provide the location of the `.env` file like so:
+
+```yml
+env_file:
+  - ./.env
+```
+
+### Priority of `.env` variables
+
+There are multiple ways we can use the environment variables in Docker, which includes,
+
+- `ENV` in Dockerfile
+- `environment` keyword in the `docker-compose.yml` file
+- `-e` option from the command line
+
+So, docker-compose has precedence levels to overcome the clash of variables. When you set the same environment variable in multiple files, here’s the priority used by Compose to choose which value to use:
+
+- Compose file
+- Shell environment variables
+- Environment file
+- Dockerfile
+- Variable is not defined
+
+So, if we define a variable in the Compose file in the `- environment` section and also in a `.env` file, Compose will consider the variable declared in the Compose file from `- environment` section.
+
+Sometimes, this might be the solution to any unexpected behavior of the application when multiple environment variables are used.
