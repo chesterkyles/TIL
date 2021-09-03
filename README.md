@@ -14,10 +14,11 @@ Current Learning Path: [DevOps for Developers](learning_path/devops.md)
 
 ### Cheat Sheets
 
-- [Git](cheat_sheets/git.md)
+- [Git Commands](cheat_sheets/git.md)
 - [Linux Commands](cheat_sheets/linux.md)
-- [Docker](cheat_sheets/docker.md)
-- [Docker-compose](cheat_sheets/docker-compose.md)
+- [Docker Commands](cheat_sheets/docker.md)
+- [Docker-Compose Commands](cheat_sheets/docker-compose.md)
+- [Docker Swarm Commands](cheat_sheets/docker-swarm.md)
 - [cURL Commands](cheat_sheets/curl.md)
 - [Environment Variables](cheat_sheets/env.md)
 
@@ -79,6 +80,7 @@ Current Learning Path: [DevOps for Developers](learning_path/devops.md)
 - [Docker Notes](docker/docker-notes.md)
 - [Dockerfile](docker/dockerfile-entries.md) [![label: update][~update]][update]
 - [Docker-Compose](docker/docker-compose.md)
+- [Docker Swarm](docker/docker-swarm.md)
 - [Networking in Compose](docker/networking-in-compose.md)
 - [Dockerizing nodeJS application](docker/dockerizing-nodejs.md) [![label: summary][~summary]][summary]
 
