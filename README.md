@@ -96,17 +96,20 @@ The following are the summary of the things that I learned in a daily basis whet
 
 ### Firebase
 
-- Android Client App
-  - [Cloud Messaging using FirebaseMessaging API](firebase/android_client/messaging.md) [![label: update][~update]][update]
+#### Android Client App
 
-- Firebase Project
-  - [Trigger a function on Cloud Storage changes](firebase/firebase_project/cloud_functions/cloud-storage-triggers.md) [![label: read][~read]][read] ![label: summary][~summary]
+- [Cloud Messaging using FirebaseMessaging API](firebase/android_client/messaging.md) [![label: update][~update]][update]
 
-- Admin SDK for PHP
-  - [Firebase For Laravel](firebase/laravel_server/firebase-for-laravel.md)
-  - [Create a firebase user programmatically](firebase/laravel_server/create-user.md)
-  - [Send a push notification to a specific device](firebase/laravel_server/cloud-messaging.md)
-  - [Verify ID tokens using Authentication](firebase/laravel_server/authentication.md)
+#### Firebase Project
+
+- [Trigger a function on Cloud Storage changes](firebase/firebase_project/cloud_functions/cloud-storage-triggers.md) [![label: read][~read]][read] ![label: summary][~summary]
+
+#### Admin SDK for PHP
+
+- [Firebase For Laravel](firebase/laravel_server/firebase-for-laravel.md)
+- [Create a firebase user programmatically](firebase/laravel_server/create-user.md)
+- [Send a push notification to a specific device](firebase/laravel_server/cloud-messaging.md)
+- [Verify ID tokens using Authentication](firebase/laravel_server/authentication.md)
 
 ### Laravel
 
