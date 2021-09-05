@@ -33,7 +33,7 @@ The process might not make much sense right now since we are running a single-no
 
 The following illustration shows a Pod’s scheduling sequence:
 
-<p align="center"><img src="resources/pod-scheduling-sequence.PNG" width="650px"/></p>
+<p align="center"><img src="resources/pod-scheduling-sequence.PNG" width="800px"/></p>
 
 ## Anatomy of a Pod
 

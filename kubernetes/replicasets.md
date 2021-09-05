@@ -29,7 +29,7 @@ go-demo-2-5fd54 2/2   Running 0        6m  db=mongo,language=go,service=go-demo-
 go-demo-2-v59t5 2/2   Running 0        6m  db=mongo,language=go,service=go-demo-2,type=backend
 ```
 
-<p align="center"><img src="resources/replicaset.PNG" width="650px"/></p>
+<p align="center"><img src="resources/replicaset.PNG" width="800px"/></p>
 
 ## Sequential Breakdown of the Process
 
@@ -44,10 +44,10 @@ The sequence of events that transpired with the kubectl create -f rs/go-demo-2.y
 7. Kubelet sent requests to Docker requesting the creation of the containers that form the Pod. In our case, the Pod defines two containers based on the `mongo` and `api` image. So in total four containers are created.
 8. Finally, Kubelet sent a request to the API server notifying it that the Pods were created successfully.
 
-<p align="center"><img src="resources/replicaset-sequence.PNG" width="650px"/></p>
+<p align="center"><img src="resources/replicaset-sequence.PNG" width="800px"/></p>
 
 The sequence we described is useful when we want to understand everything that happened in the cluster from the moment we requested the creation of a new ReplicaSet. However, it might be too confusing so we’ll try to explain the same process through a diagram that more closely represents the cluster.
 
-<p align="center"><img src="resources/replicaset-diagram.PNG" width="650px"/></p>
+<p align="center"><img src="resources/replicaset-diagram.PNG" width="800px"/></p>
 
 > Note that the diagram above uses `Minikube` to create Kubernetes cluster that is why there’s only one server that acts as both the master and the node. Typically, we’d have a multi-node cluster, and the Pods would be distributed across it.
