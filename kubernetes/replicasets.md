@@ -51,3 +51,13 @@ The sequence we described is useful when we want to understand everything that h
 <p align="center"><img src="resources/replicaset-diagram.PNG" width="800px"/></p>
 
 > Note that the diagram above uses `Minikube` to create Kubernetes cluster that is why there’s only one server that acts as both the master and the node. Typically, we’d have a multi-node cluster, and the Pods would be distributed across it.
+
+## Summary
+
+The good news is that ReplicaSets are relatively straightforward. They provide a guarantee that the specified number of replicas of a Pod will be running in the system as long as there are available resources. That’s the primary and, arguably, the only purpose.
+
+The bad news is that ReplicaSets are rarely used independently. You will almost never create a ReplicaSet directly just as you’re not going to create Pods. Instead, we tend to create ReplicaSets through Deployments. In other words, we use ReplicaSets to create and control Pods, and Deployments to create ReplicaSets (and a few other things).
+
+If you’d like to know more about ReplicaSets, please explore [ReplicaSet v1 apps API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#replicaset-v1-apps) documentation.
+
+<p align="center"><img src="resources/replicaset-summary.PNG" width="800px"/></p>

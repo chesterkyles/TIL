@@ -198,3 +198,11 @@ Let’s go through the sequence of events related to service discovery and compo
 4. Since we only have one replica of the `go-demo-2-db` Pod, iptables forwards requests to just one endpoint. If we had multiple replicas, iptables would act as a load balancer and forward requests randomly among Endpoints of the Service.
 
 <p align="center"><img src="resources/service-discovery.PNG" width="800px"/></p>
+
+## Summary
+
+Services are indispensable objects without which communication between Pods would be hard and volatile. They provide static addresses through which we can access them not only from other Pods but also from outside the cluster. This ability to have fixed entry points is crucial as it provides stability to otherwise dynamic elements of the cluster. Pods come and go, Services stay.
+
+If you’d like to know more about Services, please explore [Service v1 core API](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#service-v1-core) documentation.
+
+<p align="center"><img src="resources/service-summary.PNG" width="800px"/></p>

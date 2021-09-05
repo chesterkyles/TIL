@@ -41,3 +41,9 @@ The following illustration shows a Pod’s scheduling sequence:
 - All the containers that form a Pod are running on the same machine. A Pod cannot be split across multiple nodes.
 - All the processes (containers) inside a Pod share the same set of resources, and they can communicate with each other through `localhost`. One of those shared resources is storage.
 - A volume (think of it as a directory with shareable data) defined in a Pod can be accessed by all the containers thus allowing them all to share the same data.
+
+## Summary
+
+Pods are the most basic and, arguably, the essential building block in Kubernetes. If you’d like to know more about Pods, please explore [Podspec v1 core](https://v1-18.docs.kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#pod-v1-core) documentation.
+
+<p align="center"><img src="resources/pod-summary.PNG" width="800px"/></p>
