@@ -25,3 +25,4 @@ terraform.tfstate
 /myvalues.yaml
 /charts/istio*
 /account.json
+/certs

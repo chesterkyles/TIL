@@ -1,5 +1,7 @@
 # Pods
 
+Resources for this page can be found here: [resources/k8s-specs/pod](resources/k8s-specs/pod).
+
 ## Components involved in a Pod's Scheduling
 
 **Three** major components were involved in the process:
