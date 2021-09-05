@@ -85,13 +85,13 @@ kind create cluster --name wslkind
 ls $HOME/.kube
 ```
 
-<p align="center"><img src="resources/kind.PNG" width="650px"/></p>
+<p align="center"><img src="resources/kind.PNG" width="800px"/></p>
 
 The cluster has been successfully created, and because we are using Docker Desktop, the network is all set for us to use "as is".
 
 So we can open the Kubernetes master URL in our Windows browser:
 
-<p align="center"><img src="resources/kind-cluster.PNG" width="650px"/></p>
+<p align="center"><img src="resources/kind-cluster.PNG" width="800px"/></p>
 
 ### Kubernetes Dashboard
 
@@ -107,7 +107,7 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0-r
 kubectl get all -n kubernetes-dashboard
 ```
 
-<p align="center"><img src="resources/kind-dashboard.PNG" width="650px"/></p>
+<p align="center"><img src="resources/kind-dashboard.PNG" width="800px"/></p>
 
 ```sh
 # Start a kubectl proxy
@@ -117,7 +117,7 @@ kubectl proxy
 # http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
 ```
 
-<p align="center"><img src="resources/dashboard-token.PNG" width="650px"/></p>
+<p align="center"><img src="resources/dashboard-token.PNG" width="800px"/></p>
 
 Finally to login, we can either enter a Token, which we didn't create, or enter the `kubeconfig` file from our Cluster.
 
@@ -151,7 +151,7 @@ subjects:
 EOF
 ```
 
-<p align="center"><img src="resources/create-user-token.PNG" width="650px"/></p>
+<p align="center"><img src="resources/create-user-token.PNG" width="800px"/></p>
 
 ```sh
 # Get the Token for the ServiceAccount
@@ -159,7 +159,7 @@ kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboar
 # Copy the token and copy it into the Dashboard login and press "Sign in"
 ```
 
-<p align="center"><img src="resources/dashboard-ok.PNG" width="650px"/></p>
+<p align="center"><img src="resources/dashboard-ok.PNG" width="800px"/></p>
 
 ## Minikube: Kubernetes from everywhere
 
