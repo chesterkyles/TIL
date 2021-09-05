@@ -66,6 +66,7 @@ The following are the summary of the things that I learned in a daily basis whet
 - [Internet Protocol v4](network_fundamentals/ipv4.md)
 - [Data Link Layer](network_fundamentals/data-link-layer.md)
 - [Cross-Origin Resource Sharing (CORS)](network_fundamentals/cors.md) [![label: read][~read]][read]
+- [Load Balancers](network_fundamentals/load-balancers.md) [![label: read][~read]][read]
 
 ### Git
 
@@ -93,7 +94,9 @@ The following are the summary of the things that I learned in a daily basis whet
 ### Kubernetes
 
 - [WSL+Docker: Kubernetes on Windows](kubernetes/setup.md)
-- [Pods](kubernetes/pods.md)
+- [Pods](kubernetes/pods.md) [![label: update][~update]][update]
+- [ReplicaSets](kubernets/replicasets.md) [![label: update][~update]][update]
+- [Services](kubernetes/services.md) [![label: update][~update]][update]
 
 ### Firebase
 
