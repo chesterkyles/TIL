@@ -95,7 +95,7 @@ The following are the summary of the things that I learned in a daily basis whet
 
 - [WSL+Docker: Kubernetes on Windows](kubernetes/setup.md)
 - [Pods](kubernetes/pods.md) [![label: update][~update]][update]
-- [ReplicaSets](kubernets/replicasets.md) [![label: update][~update]][update]
+- [ReplicaSets](kubernetes/replicasets.md) [![label: update][~update]][update]
 - [Services](kubernetes/services.md) [![label: update][~update]][update]
 
 ### Firebase
