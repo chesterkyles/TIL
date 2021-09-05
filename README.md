@@ -17,11 +17,12 @@ The following are the summary of the things that I learned in a daily basis whet
 
 ### Cheat Sheets
 
-- [Git Commands](cheat_sheets/git.md)
+- [git Commands](cheat_sheets/git.md)
 - [Linux Commands](cheat_sheets/linux.md)
-- [Docker Commands](cheat_sheets/docker.md)
-- [Docker-Compose Commands](cheat_sheets/docker-compose.md)
+- [docker Commands](cheat_sheets/docker.md)
+- [docker-compose Commands](cheat_sheets/docker-compose.md)
 - [Docker Swarm Commands](cheat_sheets/docker-swarm.md)
+- [kubectl commands](cheat_sheets/kubectl.md)
 - [cURL Commands](cheat_sheets/curl.md)
 - [Environment Variables](cheat_sheets/env.md)
 
@@ -164,6 +165,8 @@ This repository is used for solely personal purposes. Everything written here ar
 - Docker Reference - <https://docs.docker.com/reference/>
 - Docker Product Manuals - <https://docs.docker.com/desktop/>
 - Firebase Admin SDK for PHP - <https://firebase-php.readthedocs.io/en/5.x/>
+- Kubernetes - <https://kubernetes.io/docs/home/>
+- Kubectl Guide -<https://kubectl.docs.kubernetes.io>
 
 ## Supplementary
 
