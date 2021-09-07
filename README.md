@@ -94,9 +94,11 @@ The following are the summary of the things that I learned in a daily basis whet
 ### Kubernetes
 
 - [WSL+Docker: Kubernetes on Windows](kubernetes/setup.md)
+- [Monolith vs Microservice](kubernetes/monolith-vs-microservice.md) [![label: update][~update]][update]
 - [Pods](kubernetes/pods.md) [![label: update][~update]][update]
 - [ReplicaSets](kubernetes/replicasets.md) [![label: update][~update]][update]
 - [Services](kubernetes/services.md) [![label: update][~update]][update]
+- [Deployments](kubernetes/deployments.md) [![label: update][~update]][update]
 
 ### Firebase
 
@@ -165,11 +167,12 @@ This repository is used for solely personal purposes. Everything written here ar
 
 - Laravel - <https://laravel.com/docs/8.x>
 - Advanced Git Tutorials - <https://www.atlassian.com/git/tutorials/advanced-overview>
+- Github Docs -<https://docs.github.com/en/github>
 - Docker Reference - <https://docs.docker.com/reference/>
 - Docker Product Manuals - <https://docs.docker.com/desktop/>
 - Firebase Admin SDK for PHP - <https://firebase-php.readthedocs.io/en/5.x/>
 - Kubernetes - <https://kubernetes.io/docs/home/>
-- Kubectl Guide -<https://kubectl.docs.kubernetes.io>
+- Kubectl Guide - <https://kubectl.docs.kubernetes.io>
 
 ## Supplementary
 
