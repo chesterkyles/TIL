@@ -2,12 +2,15 @@
 
 [![markdownlint](https://github.com/chestercolita/til/actions/workflows/markdownlint.yml/badge.svg)](https://github.com/chestercolita/til/actions/workflows/markdownlint.yml)
 
+[Online Portfolio](https://chestercolita.netlify.app/)
+
 ## TIL: Today I Learned
 
 The following are the summary of the things that I learned in a daily basis whether by reading books, articles or by trying to implement state-of-the-art technologies. Note that what I have written are just concise explanations on various technologies that I am trying to learn. Also, some of them are mere summarized version of the official documentation since the documentation is better in explaining things than me :relaxed:. The things that I listed below are based on the learnings I had while doings tasks and/or knowledge acquired from implementing/coding whenever something catches my interest.
 
 ## To-do List
 
+- Currently Studying: Vue.js and Nuxt.js (Vue Framework)
 - Current Learning Path: [DevOps for Developers](learning_path/devops.md)
 - Read: [Article reading list](learning_path/articles.md)
 
@@ -176,15 +179,10 @@ This repository is used for solely personal purposes. Everything written here ar
 
 ## Supplementary
 
-Personal Repositories:
-
-- <https://github.com/chestercolita/punctuator_nodejs>
-- <https://github.com/chestercolita/messaging-test-app>
+- Online Portfolio: <https://chestercolita.netlify.app/>
+- Repositories: <https://github.com/chestercolita?tab=repositories>
 - Gist: <https://gist.github.com/chestercolita>
-
-Learning Links:
-
-- <https://educative.io/signup?referralCode=chester-39ypR5yAKrr>
+- Educative: <https://educative.io/signup?referralCode=chester-39ypR5yAKrr>
 
 [~read]: https://img.shields.io/github/labels/chestercolita/til/read
 [read]: https://github.com/chestercolita/til/labels/read
