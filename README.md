@@ -11,7 +11,8 @@ The following are the summary of the things that I learned in a daily basis whet
 ## To-do List
 
 - Currently Studying: Vue.js and Nuxt.js (Vue Framework)
-- Current Learning Path: [DevOps for Developers](learning_path/devops.md)
+- Update [Vue.js](#vuejs) section
+- Learning Path (On-hold): [DevOps for Developers](learning_path/devops.md)
 - Read: [Article reading list](learning_path/articles.md)
 
 ---
@@ -38,6 +39,7 @@ The following are the summary of the things that I learned in a daily basis whet
 - [Firebase](#firebase)
 - [Laravel](#laravel)
 - [Node.js](#nodejs)
+- [Vue.js](#vuejs)
 - [HTML/CSS/JS](#htmlcssjs)
 - [Github Workflow](#github-workflow)
 - [Amazon Web Services (AWS)](#amazon-web-services-aws)
@@ -138,6 +140,8 @@ The following are the summary of the things that I learned in a daily basis whet
 - [Web application using Express framework](nodejs/express.md) [![label: read][~read]][read]
 - [Network requests using Axios](nodejs/axios.md) [![label: read][~read]][read]
 - [Use Embedded Javascript Templating (EJS) as Template Engine](node/ejs.md) [![label: read][~read]][read]
+
+### Vue.js
 
 ### HTML/CSS/JS
 
