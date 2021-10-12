@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Models\StaffAccount;
 use Illuminate\Support\Facades\Request;
 use Laravel\Passport\Passport;
 use Illuminate\Support\Facades\Gate;
@@ -29,32 +28,7 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         Gate::define('vendor', function($user) {
-            if ($user->isVendorUser()) {
-                return $user->vendor->id == Request::route()->parameter('vendor')->id;
-            }
-
-            return false;
-        });
-
-        Gate::define('agency', function($user) {
-            if ($user->isVendorUser()) {
-                return $user->vendor->hasAgencyAuthority(Request::route()->parameter('agency')->id);
-            } elseif ($user->isAgencyUser()) {
-                return $user->agency->id == Request::route()->parameter('agency')->id;
-            }
-
-            return false;
-        });
-
-        Gate::define('facility', function($user) {
-            if ($user->isVendorUser()) {
-                return $user->vendor->hasFacilityAuthority(Request::route()->parameter('facility')->id);
-            } elseif ($user->isAgencyUser()) {
-                return $user->agency->hasFacilityAuthority(Request::route()->parameter('facility')->id);
-            } else if ($user->isFacilityUser()) {
-                return $user->facility->id == Request::route()->parameter('facility')->id;
-            }
-
+            // some condition here to return true
             return false;
         });
 
@@ -76,6 +50,6 @@ class AuthServiceProvider extends ServiceProvider
         }
 
         $uid = $verifiedIdToken->claims()->get('sub');
-        return StaffAccount::where('firebase_uid', $uid)->first();
+        return User::where('firebase_uid', $uid)->first();
     }
 }

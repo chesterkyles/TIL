@@ -133,6 +133,8 @@ The following are the summary of the things that I learned in a daily basis whet
 - [HTTP Requests](laravel/http-request.md)
 - [File Storage using Laravel's filesystem](laravel/file-storage.md)
 - [Mocking Objects for Testing](laravel/mocking.md)
+- [Laravel Sail](laravel/sail.md)
+- [Laravel Sanctum](laravel/sanctum.md)
 - [Add breadcrumbs using Tabuna/Breadcrumbs package](laravel/tabuna-breadcrumbs.md) [![label: summary][~summary]][summary]
 
 ### Node.js

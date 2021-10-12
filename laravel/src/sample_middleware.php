@@ -24,26 +24,19 @@ class EnsureAccessToPageIsValid
                 continue;
             }
 
-            // check for user routes
-            if ($request->routeIs('*.user.*')) {
-                if($initParam->users->where('id', $param->id)->isEmpty()) {
-                    abort(403);
-                }
+            // break loop if route parameter is not a Model
+            if (!$param instanceof Model) {
+                break;
             }
 
             // check if there's relationship between models
-            $relation = $this->getRelationName($initParam);
-            if ($initParam->id !== $param->$relation->id) {
+            $relation = lcfirst(class_basename($initParam));
+            if ($param->$relation === null ||
+                $initParam->id !== $param->$relation->id) {
                 abort(403);
             }
             $initParam = $param;
         }
         return $next($request);
-    }
-
-    private function getRelationName(object $param): string
-    {
-        $chunk = explode('\\', get_class($param));
-        return lcfirst(end($chunk));
     }
 }

@@ -1,9 +1,5 @@
 # HTTP Tests
 
-## Example
-
-- See example source code that I have written. [sample_http_test.php](src/sample_http_test.php)
-
 ## Getting Started
 
 Laravel provides a very fluent API for making HTTP requests to your application and examining the responses. For example, take a look at the feature test defined below:

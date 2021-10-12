@@ -2,8 +2,6 @@
 
 namespace Tests\Unit\Services;
 
-use App\Models\CareHistory;
-use App\Models\StaffAccount;
 use App\Services\FirebaseService;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Support\Str;
@@ -56,20 +54,7 @@ class FirebaseServiceTest extends TestCase
      */
     public function sendPushNotificationToClientIsSuccessful(): void
     {
-        $staff = StaffAccount::factory()->create([
-            'firebase_token' => $this->faker->text(),
-        ]);
-        $careHistory = CareHistory::factory()->create([
-            'staff_account_id' => $staff->id,
-        ]);
-
-        $mockMessage = CloudMessage::new();
-        $mockMessage = $mockMessage
-            ->withTarget('token', $staff->firebase_token)
-            ->withData([
-                'type' => 'care_history',
-                'id' => $careHistory->id,
-            ]);
+        // some codes here
 
         $this->mock(FirebaseService::class, function ($mock) use ($mockMessage) {
             $mock->shouldReceive('sendPushNotificationToClient')
@@ -77,53 +62,10 @@ class FirebaseServiceTest extends TestCase
                 ->andReturn($mockMessage);
         });
 
-        $result = self::firebaseService()->sendPushNotificationToClient($careHistory->id, $staff->firebase_token);
+        $result = self::firebaseService()->sendPushNotificationToClient(/** Code here */);
         $output = $result->jsonSerialize();
 
-        $this->assertNotEmpty($result);
-        $this->assertEquals($careHistory->id, $output['data']->jsonSerialize()['id']);
-        $this->assertEquals($staff->firebase_token, $output['token']);
-    }
-
-    /**
-     * @test
-     */
-    public function sendPushNotificationToClientNotFoundMessageOnExpiredToken():void
-    {
-        $staff = StaffAccount::factory()->create([
-            'firebase_token' => $this->faker->text(),
-        ]);
-        $careHistory = CareHistory::factory()->create([
-            'staff_account_id' => $staff->id,
-        ]);
-
-        $this->mock(Messaging::class, function ($mock) {
-            $mock->shouldReceive('validateRegistrationTokens')
-                ->once()
-                ->andReturn(['invalid' => []])
-                ->shouldReceive('send')
-                ->once()
-                ->andThrow(NotFound::class);
-        });
-
-        $this->expectException(FirebaseException::class);
-        self::firebaseService()->sendPushNotificationToClient($careHistory->id, $staff->firebase_token);
-    }
-
-    /**
-     * @test
-     */
-    public function sendPushNotificationToClientFailedOnInvalidToken():void
-    {
-        $staff = StaffAccount::factory()->create([
-            'firebase_token' => $this->faker->text(),
-        ]);
-        $careHistory = CareHistory::factory()->create([
-            'staff_account_id' => $staff->id,
-        ]);
-
-        $this->expectException(FirebaseException::class);
-        self::firebaseService()->sendPushNotificationToClient($careHistory->id, $staff->firebase_token);
+        // assertion here
     }
 
     private static function firebaseService()
