@@ -91,3 +91,82 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 ```
 
 ### Revoking Tokens
+
+You may "revoke" tokens by deleting them from your database using the `tokens` relationship that is provided by the `Laravel\Sanctum\HasApiTokens` trait:
+
+```php
+// Revoke all tokens...
+$user->tokens()->delete();
+
+// Revoke the token that was used to authenticate the current request...
+$request->user()->currentAccessToken()->delete();
+
+// Revoke a specific token...
+$user->tokens()->where('id', $tokenId)->delete();
+```
+
+## SPA Authentication
+
+Sanctum also exists to provide a simple method of authenticating single page applications (SPAs) that need to communicate with a Laravel powered API.
+
+For this feature, Sanctum does not use tokens of any kind. Instead, Sanctum uses Laravel's built-in cookie based session authentication services. This approach to authentication provides the benefits of `CSRF protection`, `session authentication`, as well as protects against `leakage of the authentication credentials via XSS`.
+
+> In order to authenticate, your SPA and API must share the same top-level domain. However, they may be placed on different subdomains. Additionally, you should ensure that you send the `Accept: application/json` header with your request.
+
+### Configuration
+
+#### Configuring First-Party Domains
+
+Configure these domains using the `stateful` configuration option in the `sanctum` configuration file. This configuration setting determines which domains will maintain "stateful" authentication using Laravel session cookies when making requests to your API. For example:
+
+```php
+'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', sprintf(
+    '%s%s',
+    'localhost,localhost:3000,127.0.0.1,127.0.0.1:8000,::1',
+    env('APP_URL') ? ','.parse_url(env('APP_URL'), PHP_URL_HOST) : ''
+))),
+```
+
+#### Sanctum Middleware
+
+Add Sanctum's middleware to the `api` middleware group within the `app/Http/Kernel.php` file. This middleware is responsible for ensuring that incoming requests from your SPA can authenticate using Laravel's session cookies, while still allowing requests from third parties or mobile applications to authenticate using API tokens:
+
+```php
+'api' => [
+    \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+    'throttle:api',
+    \Illuminate\Routing\Middleware\SubstituteBindings::class,
+],
+```
+
+#### CORS & Cookies
+
+If you are having trouble authenticating with your application from a SPA that executes on a separate subdomain, you have likely misconfigured your CORS (Cross-Origin Resource Sharing) or session cookie settings.
+
+You should ensure that your application's CORS configuration is returning the `Access-Control-Allow-Credentials` header with a value of `True`. This may be accomplished by setting the `supports_credentials` option within your application's `config/cors.php` configuration file to `true`.
+
+In addition, you should enable the `withCredentials` option on your application's global `axios` instance. Typically, this should be performed in your `resources/js/bootstrap.js` file. If you are not using Axios to make HTTP requests from your frontend, you should perform the equivalent configuration on your own HTTP client:
+
+```js
+axios.defaults.withCredentials = true;
+```
+
+Finally, you should ensure your application's session cookie domain configuration supports any subdomain of your root domain. You may accomplish this by prefixing the domain with a leading `.` within your application's `config/session.php` configuration file:
+
+```php
+'domain' => '.domain.com',
+```
+
+### Authenticating
+
+#### CSRF Protections
+
+```php
+axios.get('/sanctum/csrf-cookie').then(response => {
+    // Login...
+});
+```
+
+#### Logging In
+
+Once CSRF protection has been initialized, you should make a `POST` request to your Laravel application's `/login` route. This `/login` route may be [implemented manually](https://laravel.com/docs/8.x/authentication#authenticating-users) or using a headless authentication package like [Laravel Fortify](https://laravel.com/docs/8.x/fortify).
