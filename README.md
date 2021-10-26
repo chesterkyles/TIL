@@ -134,7 +134,8 @@ The following are the summary of the things that I learned in a daily basis whet
 - [File Storage using Laravel's filesystem](laravel/file-storage.md)
 - [Mocking Objects for Testing](laravel/mocking.md)
 - [Laravel Sail](laravel/sail.md)
-- [Laravel Sanctum](laravel/sanctum.md)
+- [Laravel Sanctum](laravel/sanctum.md) [![label: update][~update]][update]
+- [Database: Migrations](laravel/migrations.md) [![label: update][~update]][update]
 - [Add breadcrumbs using Tabuna/Breadcrumbs package](laravel/tabuna-breadcrumbs.md) [![label: summary][~summary]][summary]
 
 ### Node.js
@@ -144,6 +145,8 @@ The following are the summary of the things that I learned in a daily basis whet
 - [Use Embedded Javascript Templating (EJS) as Template Engine](node/ejs.md) [![label: read][~read]][read]
 
 ### Vue.js
+- [Application and Component Instances](vuejs/component-instance.md)
+- [Component Basics](vuejs/component-basics.md) [![label: update][~update]][update]
 
 ### HTML/CSS/JS
 
