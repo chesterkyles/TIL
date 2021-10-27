@@ -32,6 +32,7 @@ The following are the summary of the things that I learned in a daily basis whet
 
 ### Categories
 
+- [Codewars](#codewars)
 - [Network Fundamentals](#network-fundamentals)
 - [Git](#git)
 - [Docker](#docker)
@@ -60,6 +61,11 @@ The following are the summary of the things that I learned in a daily basis whet
 ```
 
 ---
+
+### Codewars
+
+- [PHP](codewars/php.md)
+- [Javascript](codewars/javascript.md)
 
 ### Network Fundamentals
 
