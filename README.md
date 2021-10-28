@@ -148,6 +148,10 @@ The following are the summary of the things that I learned in a daily basis whet
 - [Database: Migrations](laravel/migrations.md) [![label: update][~update]][update]
 - [Add breadcrumbs using Tabuna/Breadcrumbs package](laravel/tabuna-breadcrumbs.md) [![label: summary][~summary]][summary]
 
+### Javascript
+
+- [Javascript Console Method](javascript/console.md)
+
 ### Node.js
 
 - [Web application using Express framework](nodejs/express.md) [![label: read][~read]][read]
@@ -169,9 +173,9 @@ The following are the summary of the things that I learned in a daily basis whet
 
 ### BootstrapVue
 
-### HTML/CSS/JS
+### HTML/CSS
 
-- [Build responsive sites with Bootstrapv4](html_css_js/bootstrap.md) ![label: summary][~summary] [![label: update][~update]][update]
+- [Build responsive sites with Bootstrapv4](html_css/bootstrap.md) ![label: summary][~summary] [![label: update][~update]][update]
 
 ### Github Workflow
 
