@@ -143,10 +143,17 @@ The following are the summary of the things that I learned in a daily basis whet
 - [Web application using Express framework](nodejs/express.md) [![label: read][~read]][read]
 - [Network requests using Axios](nodejs/axios.md) [![label: read][~read]][read]
 - [Use Embedded Javascript Templating (EJS) as Template Engine](node/ejs.md) [![label: read][~read]][read]
+- [Optional Chaining](nodejs/optional-chaining.md)
 
 ### Vue.js
+
 - [Application and Component Instances](vuejs/component-instance.md)
 - [Component Basics](vuejs/component-basics.md) [![label: update][~update]][update]
+
+### Nuxt.js
+
+- [File System Routing](nuxtjs/file-system-routing.md)
+- [Data Fetching](nuxtjs/data-fetching.md)
 
 ### HTML/CSS/JS
 
