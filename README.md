@@ -29,7 +29,7 @@ The following are the summary of the things that I learned in a daily basis whet
 - [kubectl commands](cheat_sheets/kubectl.md)
 - [cURL Commands](cheat_sheets/curl.md)
 - [Environment Variables](cheat_sheets/env.md)
-- [VSCode Shortcuts](cheat_sheets/vscode.md)
+- [VSCode Keyboard Shortcuts](cheat_sheets/vscode.md)
 
 ### Categories
 
