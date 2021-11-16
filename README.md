@@ -29,6 +29,7 @@ The following are the summary of the things that I learned in a daily basis whet
 - [kubectl commands](cheat_sheets/kubectl.md)
 - [cURL Commands](cheat_sheets/curl.md)
 - [Environment Variables](cheat_sheets/env.md)
+- [VSCode Shortcuts](cheat_sheets/vscode.md)
 
 ### Categories
 
@@ -41,6 +42,8 @@ The following are the summary of the things that I learned in a daily basis whet
 - [Laravel](#laravel)
 - [Node.js](#nodejs)
 - [Vue.js](#vuejs)
+- [Nuxt.js](#nuxtjs)
+- [BootstrapVue](#bootstrapvue)
 - [HTML/CSS/JS](#htmlcssjs)
 - [Github Workflow](#github-workflow)
 - [Amazon Web Services (AWS)](#amazon-web-services-aws)
@@ -155,11 +158,14 @@ The following are the summary of the things that I learned in a daily basis whet
 
 - [Application and Component Instances](vuejs/component-instance.md)
 - [Component Basics](vuejs/component-basics.md) [![label: update][~update]][update]
+- [Custom Directive](vuejs/custom-directive.md)
 
 ### Nuxt.js
 
 - [File System Routing](nuxtjs/file-system-routing.md)
 - [Data Fetching](nuxtjs/data-fetching.md)
+
+### BootstrapVue
 
 ### HTML/CSS/JS
 
@@ -198,6 +204,8 @@ This repository is used for solely personal purposes. Everything written here ar
 - Firebase Admin SDK for PHP - <https://firebase-php.readthedocs.io/en/5.x/>
 - Kubernetes - <https://kubernetes.io/docs/home/>
 - Kubectl Guide - <https://kubectl.docs.kubernetes.io>
+- Nuxtjs - <https://nuxtjs.org/docs/get-started/installation>
+- Vuejs - <>
 
 ## Supplementary
 
