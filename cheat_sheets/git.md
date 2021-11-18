@@ -226,9 +226,9 @@ git push -u origin summary/internet
 
 The `~`(tilde) and `^`(caret) symbols are used to point to a position relative to a specific commit. The symbols are used together with a commit reference, typically HEAD or a commit hash.
 
-- `~`n refers to the nth grandparent. HEAD~1 refers to the commit's first parent. HEAD~2 refers to the first parent of the commit's first parent.
+- `~`n refers to the nth grandparent. `HEAD~1` refers to the commit's first parent. `HEAD~2` refers to the first parent of the commit's first parent.
 
-- `^`n refers to the the nth parent. HEAD^1 refers to the commit's first parent. HEAD^2 refers to the commit's second parent. A commit can have two parents in a merge commit.
+- `^`n refers to the the nth parent. `HEAD^1` refers to the commit's first parent. `HEAD^2` refers to the commit's second parent. A commit can have two parents in a merge commit.
 
 <p align="center"><img src="../git/resources/switch_branches_001.png" width="380px"></p>
 
