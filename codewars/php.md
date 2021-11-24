@@ -1,5 +1,9 @@
 # Codewars - PHP
 
+## Link
+
+<https://www.codewars.com/users/chestercolita/completed_solutions>
+
 ## Split Strings
 
 ### Question
@@ -142,5 +146,35 @@ function solequa($n) {
     $result[] = [$x, $y];
   }
   return $result;
+}
+```
+
+## Duplicate Encoder
+
+### Question
+
+The goal of this exercise is to convert a string to a new string where each character in the new string is `"("` if that character appears only once in the original string, or `")"` if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
+
+Examples:
+
+```
+"din"      =>  "((("
+"recede"   =>  "()()()"
+"Success"  =>  ")())())"
+"(( @"     =>  "))(("
+```
+
+### My Solution
+
+```php
+function duplicate_encode($word) {
+  $array = str_split(strtolower($word));
+  $counts = array_count_values($array);
+
+  foreach ($array as $key => $char) {
+    $array[$key] = ($counts[$char] > 1) ? ')' : '(';
+  }
+
+  return implode($array);
 }
 ```
