@@ -160,6 +160,7 @@ The following are the summary of the things that I learned in a daily basis whet
 - [Application and Component Instances](vuejs/component-instance.md)
 - [Component Basics](vuejs/component-basics.md) [![label: update][~update]][update]
 - [Custom Directive](vuejs/custom-directive.md)
+- [Lifecycle Hooks](vuejs/lifecycle-hooks.md)
 
 ### Nuxt.js
 
