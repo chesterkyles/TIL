@@ -165,6 +165,9 @@ The following are the summary of the things that I learned in a daily basis whet
 - [Component Basics](vuejs/component-basics.md) [![label: update][~update]][update]
 - [Custom Directive](vuejs/custom-directive.md)
 - [Lifecycle Hooks](vuejs/lifecycle-hooks.md)
+- [Custom Directives](vuejs/custom-directives.md)
+- [Fragments](vuejs/fragments.md)
+- [Computed Properties](vuejs/computed-properties.md)
 
 ### Nuxt.js
 
